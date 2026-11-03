@@ -8,7 +8,7 @@
     <meta name="keywords" content="Lead Backend Engineer, System Design, Yannis Kolovos">
     <meta name="author" content="Yannis Kolovos">
 
-    <meta name="theme-color" content="#05070d">
+    <meta name="theme-color" content="#f7f9fc">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,13 +73,13 @@
 
     <style>
         :root {
-            --bg: #05070d;
-            --panel: rgba(255, 255, 255, 0.03);
-            --line: rgba(255, 255, 255, 0.08);
-            --text: #e6edf6;
-            --muted: #8b97a8;
-            --accent: #00e5ff;
-            --accent-2: #8b5cf6;
+            --bg: #f7f9fc;
+            --panel: #ffffff;
+            --line: rgba(15, 23, 42, 0.08);
+            --text: #0b1220;
+            --muted: #556274;
+            --accent: #0891b2;
+            --accent-2: #7c3aed;
             --mono: 'JetBrains Mono', ui-monospace, monospace;
             --sans: 'Space Grotesk', system-ui, sans-serif;
         }
@@ -103,8 +103,8 @@
             inset: 0;
             z-index: -1;
             background:
-                radial-gradient(ellipse 60% 40% at 20% 0%, rgba(0, 229, 255, 0.12), transparent 70%),
-                radial-gradient(ellipse 50% 40% at 90% 10%, rgba(139, 92, 246, 0.12), transparent 70%),
+                radial-gradient(ellipse 60% 40% at 20% 0%, rgba(8, 145, 178, 0.12), transparent 70%),
+                radial-gradient(ellipse 50% 40% at 90% 10%, rgba(124, 58, 237, 0.12), transparent 70%),
                 linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 48px 48px,
                 linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 48px 48px;
             mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.15) 100%);
@@ -112,7 +112,7 @@
 
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        b, strong { color: #fff; font-weight: 600; }
+        b, strong { color: var(--text); font-weight: 600; }
 
         .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
@@ -122,7 +122,7 @@
             top: 0;
             z-index: 10;
             backdrop-filter: blur(12px);
-            background: rgba(5, 7, 13, 0.7);
+            background: rgba(247, 249, 252, 0.75);
             border-bottom: 1px solid var(--line);
         }
         nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
@@ -138,14 +138,14 @@
         .avatar {
             width: 168px; height: 168px; border-radius: 50%; padding: 3px; flex-shrink: 0;
             background: conic-gradient(from 180deg, var(--accent), var(--accent-2), var(--accent));
-            box-shadow: 0 0 48px rgba(0, 229, 255, 0.25);
+            box-shadow: 0 0 48px rgba(8, 145, 178, 0.25);
         }
         .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--bg); }
         .hero-text { flex: 1; min-width: 280px; }
         .tag { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
         .hero h1 {
             font-size: clamp(40px, 7vw, 64px); line-height: 1.05; margin: 12px 0 16px; letter-spacing: -0.02em;
-            background: linear-gradient(90deg, #fff, #9fefff 60%, #c4b5fd);
+            background: linear-gradient(90deg, #0b1220, #0891b2 60%, #7c3aed);
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         .hero p { color: var(--muted); font-size: 18px; max-width: 640px; margin-bottom: 12px; }
@@ -156,7 +156,7 @@
             font-family: var(--mono); font-size: 14px; padding: 10px 20px; border-radius: 8px;
             border: 1px solid var(--accent); color: var(--accent); transition: all 0.2s;
         }
-        .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; box-shadow: 0 0 24px rgba(0, 229, 255, 0.4); }
+        .btn:hover { background: var(--accent); color: #fff; text-decoration: none; box-shadow: 0 0 24px rgba(8, 145, 178, 0.4); }
         .btn.ghost { border-color: var(--line); color: var(--text); }
         .btn.ghost:hover { border-color: var(--accent); background: transparent; color: var(--accent); }
 
@@ -173,7 +173,7 @@
             background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px;
             transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
         }
-        .card:hover { border-color: rgba(0, 229, 255, 0.4); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0, 229, 255, 0.08); }
+        .card:hover { border-color: rgba(8, 145, 178, 0.4); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(8, 145, 178, 0.08); }
         .card h3 { font-size: 18px; margin-bottom: 8px; }
         .card h3 a { color: var(--text); }
         .card h3 a:hover { color: var(--accent); }
@@ -183,7 +183,7 @@
         .card-head h3 { margin: 0; }
 
         /* Logos sit on a light tile so dark marks stay visible */
-        .tile { width: 40px; height: 40px; border-radius: 8px; background: #f1f5f9; padding: 6px; flex-shrink: 0; display: grid; place-items: center; }
+        .tile { width: 40px; height: 40px; border-radius: 8px; background: #f1f5f9; border: 1px solid var(--line); padding: 6px; flex-shrink: 0; display: grid; place-items: center; }
         .tile img { width: 100%; height: 100%; object-fit: contain; }
         .tile.lg { width: 56px; height: 56px; }
 
@@ -198,7 +198,7 @@
 
         /* Quotes */
         .quotes { display: grid; gap: 16px; }
-        blockquote { font-size: 17px; color: #c9d3e0; font-style: normal; }
+        blockquote { font-size: 17px; color: #334155; font-style: normal; }
         blockquote::before { content: "\201C"; font-family: var(--mono); color: var(--accent); font-size: 32px; line-height: 0; vertical-align: -12px; margin-right: 4px; }
         .who { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
         .who h4 { font-size: 15px; }
@@ -211,13 +211,13 @@
 
         .two { display: grid; gap: 48px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 
-        .note { margin-top: 16px; padding: 18px; border: 1px solid rgba(139, 92, 246, 0.4); background: rgba(139, 92, 246, 0.06); border-radius: 10px; }
+        .note { margin-top: 16px; padding: 18px; border: 1px solid rgba(124, 58, 237, 0.4); background: rgba(124, 58, 237, 0.06); border-radius: 10px; }
         .note p { color: var(--muted); font-size: 14px; }
         .note p:first-child { color: var(--text); margin-bottom: 6px; }
 
         .books { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
         .books img { width: 100%; border-radius: 6px; display: block; transition: transform 0.2s, box-shadow 0.2s; }
-        .books a:hover img { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0, 229, 255, 0.2); }
+        .books a:hover img { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(8, 145, 178, 0.2); }
 
         .gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 32px; }
         .gallery img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); filter: saturate(0.85); transition: filter 0.3s; }
