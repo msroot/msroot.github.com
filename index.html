@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yannis Kolovos - Lead Backend Engineer">
-    <meta name="keywords" content="Lead Backend Engineer, System Design, Yannis Kolovos">
+    <meta name="description" content="Yannis Kolovos - Senior Backend Engineer">
+    <meta name="keywords" content="Senior Backend Engineer, Lead Backend Engineer, System Design, Yannis Kolovos">
     <meta name="author" content="Yannis Kolovos">
 
     <meta name="theme-color" content="#f7f9fc">
@@ -17,24 +17,24 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
 
-    <title>Yannis Kolovos - Lead Backend Engineer</title>
+    <title>Yannis Kolovos - Senior Backend Engineer</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <meta property="og:title" content="Yannis Kolovos - Lead Backend Engineer">
+    <meta property="og:title" content="Yannis Kolovos - Senior Backend Engineer">
     <meta property="og:description" content="Portfolio of Yannis Kolovos, showcasing expertise in software architecture, system design, and backend engineering.">
     <meta property="og:image" content="https://msroot.me/android-chrome-512x512.png">
     <meta property="og:url" content="https://msroot.me">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Yannis Kolovos Portfolio">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image:alt" content="Yannis Kolovos - Lead Backend Engineer">
+    <meta property="og:image:alt" content="Yannis Kolovos - Senior Backend Engineer">
     <meta property="og:updated_time" content="2026-11-03T12:00:00Z">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yannis Kolovos - Lead Backend Engineer">
+    <meta name="twitter:title" content="Yannis Kolovos - Senior Backend Engineer">
     <meta name="twitter:description" content="Portfolio of Yannis Kolovos, showcasing expertise in software architecture, system design, and backend engineering">
     <meta name="twitter:image" content="https://msroot.me/android-chrome-512x512.png">
     <meta name="twitter:site" content="@yannis_kolovos">
@@ -48,7 +48,8 @@
             "@type": "Person",
             "name": "Yannis Kolovos",
             "url": "https://msroot.me",
-            "jobTitle": "Lead Backend Engineer",
+            "jobTitle": "Senior Backend Engineer",
+            "worksFor": { "@type": "Organization", "name": "VODA.ai", "url": "https://voda.ai" },
             "description": "Portfolio of Yannis Kolovos, showcasing expertise in software architecture, system design, and backend engineering.",
             "image": "https://msroot.me/android-chrome-512x512.png",
             "sameAs": [
@@ -150,6 +151,10 @@
         .hero p { color: var(--muted); font-size: 18px; max-width: 640px; margin-bottom: 12px; }
         .hero .role { font-size: 22px; font-weight: 700; color: #475569; margin-bottom: 6px; }
         .hero p.tagline { color: #9aa6b6; margin-bottom: 24px; }
+        .where { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+        .proof { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .proof span { font-family: var(--mono); font-size: 12px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--muted); }
+        .proof b { color: var(--accent); }
         .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
         .btn {
             font-family: var(--mono); font-size: 14px; padding: 10px 20px; border-radius: 8px;
@@ -196,6 +201,26 @@
         .more { font-family: var(--mono); font-size: 13px; display: inline-block; margin-top: 16px; }
         .after-grid { display: block; width: fit-content; margin: 24px 0 0 auto; }
 
+        /* Experience */
+        .timeline { display: grid; gap: 16px; }
+        .job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 12px; }
+        .job-head h3 { margin: 0; font-size: 20px; }
+        .job-role { font-size: 15px; color: #475569; font-weight: 500; }
+        .certs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .certs span { font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(34, 197, 94, 0.4); background: rgba(34, 197, 94, 0.08); color: #15803d; }
+        .dates { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+        .job ul { margin: 12px 0 0 18px; color: var(--muted); font-size: 14px; display: grid; gap: 6px; }
+        .metric { color: var(--accent) !important; }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+        .tags span { font-family: var(--mono); font-size: 12px; padding: 2px 8px; border-radius: 6px; background: rgba(8, 145, 178, 0.08); color: var(--accent); }
+        .grid.earlier { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+        .sub { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--muted); margin: 32px 0 12px; }
+
+        /* Stack groups */
+        .stack-group + .stack-group { margin-top: 24px; }
+        .stack-group h3 { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--muted); margin-bottom: 10px; }
+        .tile.txt { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--accent); }
+
         /* Quotes */
         .quotes { display: grid; gap: 16px; }
         blockquote { font-size: 17px; color: #334155; font-style: normal; }
@@ -204,6 +229,7 @@
         a.tile:hover { border-color: var(--accent); }
         .who h4 { font-size: 15px; }
         .who span { font-size: 13px; color: var(--muted); font-family: var(--mono); }
+        .who .rel { display: block; font-size: 12px; margin-top: 2px; }
 
         /* Lists */
         .list { list-style: none; display: grid; gap: 10px; }
@@ -249,8 +275,8 @@
         <div class="wrap">
             <a href="#about" class="logo">msroot<span>.me</span></a>
             <ul>
+                <li><a href="#experience">experience</a></li>
                 <li><a href="#technologies">stack</a></li>
-                <li><a href="#projects">projects</a></li>
                 <li><a href="#articles">articles</a></li>
                 <li><a href="#open-source">oss</a></li>
                 <li><a href="#connect">contact</a></li>
@@ -263,8 +289,14 @@
             <div class="avatar"><img src="img/me2.png" alt="Yannis Kolovos"></div>
             <div class="hero-text">
                 <h1>Yannis Kolovos</h1>
-                <div class="role">Lead Backend Engineer</div>
+                <div class="role">Senior Backend Engineer · <a href="https://voda.ai" target="_blank">VODA.ai</a></div>
                 <p class="tagline">Designing and building secure, scalable systems.</p>
+                <div class="where">Remote · Greece · USA / EMEA</div>
+                <div class="proof">
+                    <span><b>Founding Engineer</b> · Advocate · <b>$1.5T</b> in loan value processed</span>
+                    <span><b>AITD Excellence Award 2017</b> · Best Use of Technology for Learning</span>
+                    <span>Projects featured in <b>The Guardian · CNN · La Stampa</b></span>
+                </div>
                 <p>With 20 years of hands-on experience building complex systems from the ground up, I transform complex business requirements into high-performance, real-world applications.</p>
                 <p>As a strategic thinker and hacker at heart, I approach system design through the lens of the <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a> — <strong>simplicity, efficiency, and elegance.</strong></p>
                 <div class="cta">
@@ -276,76 +308,70 @@
         </div>
     </header>
 
-    <section id="technologies">
+    <section id="experience">
         <div class="wrap">
-            <div class="label">// 01 — stack</div>
-            <h2>Technologies</h2>
-            <p class="lead">Here are some of the technologies I've used, but the list keeps evolving based on <b>each project's needs</b>. I actively <b>embrace cutting-edge technologies</b>, along with the latest tools and emerging trends.</p>
-            <div class="grid sm">
-                <a href="https://graphql.org/" target="_blank" class="chip"><span class="tile"><img src="img/graphql.svg" alt=""></span>GraphQL</a>
-                <a href="https://www.mongodb.com/" target="_blank" class="chip"><span class="tile"><img src="img/mongodb.svg" alt=""></span>MongoDB</a>
-                <a href="https://aws.amazon.com/" target="_blank" class="chip"><span class="tile"><img src="img/aws.svg" alt=""></span>AWS</a>
-                <a href="https://redis.io/" target="_blank" class="chip"><span class="tile"><img src="img/redis.svg" alt=""></span>Redis</a>
-                <a href="https://kubernetes.io/" target="_blank" class="chip"><span class="tile"><img src="img/kubernetes.svg" alt=""></span>Kubernetes</a>
-                <a href="https://www.apollographql.com/" target="_blank" class="chip"><span class="tile"><img src="img/apollo.svg" alt=""></span>Apollo</a>
-                <a href="https://www.docker.com/" target="_blank" class="chip"><span class="tile"><img src="img/docker.svg" alt=""></span>Docker</a>
-                <a href="https://www.serverless.com/" target="_blank" class="chip"><span class="tile"><img src="img/serverless.svg" alt=""></span>Serverless</a>
-                <a href="https://www.ruby-lang.org/" target="_blank" class="chip"><span class="tile"><img src="img/ruby.svg" alt=""></span>Ruby</a>
-                <a href="https://expressjs.com/" target="_blank" class="chip"><span class="tile"><img src="img/express.svg" alt=""></span>Express</a>
-                <a href="https://www.postgresql.org/" target="_blank" class="chip"><span class="tile"><img src="img/postgresql.svg" alt=""></span>PostgreSQL</a>
-                <a href="https://auth0.com/" target="_blank" class="chip"><span class="tile"><img src="img/auth0.svg" alt=""></span>Auth0</a>
-                <a href="https://www.elastic.co/kibana/" target="_blank" class="chip"><span class="tile"><img src="img/kibana.svg" alt=""></span>Kibana</a>
-                <a href="https://www.elastic.co/" target="_blank" class="chip"><span class="tile"><img src="img/elasticsearch.svg" alt=""></span>ElasticSearch</a>
-                <a href="https://zeromq.org/" target="_blank" class="chip"><span class="tile"><img src="img/zeromq.svg" alt=""></span>ZeroMQ</a>
-                <a href="https://nodejs.org/" target="_blank" class="chip"><span class="tile"><img src="img/node-js.svg" alt=""></span>Node.js</a>
-                <a href="https://couchdb.apache.org/" target="_blank" class="chip"><span class="tile"><img src="img/couchdb.svg" alt=""></span>CouchDB</a>
-                <a href="https://jwt.io/" target="_blank" class="chip"><span class="tile"><img src="img/jwt.svg" alt=""></span>JWT</a>
-                <a href="https://rubyonrails.org/" target="_blank" class="chip"><span class="tile"><img src="img/rails.svg" alt=""></span>Ruby on Rails</a>
-                <a href="https://www.ansible.com/" target="_blank" class="chip"><span class="tile"><img src="img/ansible.svg" alt=""></span>Ansible</a>
-                <a href="https://www.scrum.org/" target="_blank" class="chip"><span class="tile"><img src="img/scrum.svg" alt=""></span>Scrum</a>
-                <a href="https://nginx.org/" target="_blank" class="chip"><span class="tile"><img src="img/nginx.svg" alt=""></span>Nginx</a>
-                <a href="https://jestjs.io/" target="_blank" class="chip"><span class="tile"><img src="img/jest.svg" alt=""></span>Jest</a>
-                <a href="https://circleci.com/" target="_blank" class="chip"><span class="tile"><img src="img/circleci.svg" alt=""></span>CircleCI</a>
-                <a href="https://grafana.com/" target="_blank" class="chip"><span class="tile"><img src="img/grafana.png" alt=""></span>Grafana</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="wrap">
-            <div class="label">// 02 — work</div>
-            <h2>Selected Projects</h2>
-            <p class="lead">Selected projects I've had the privilege to work on. While I cannot share details about certain NDA-protected projects, I'm proud to say that many of them have made a meaningful <b>impact on people's lives</b>, <b>increased company valuations</b> by delivering <b>exceptional services and tools</b> to clients and <b>gained significant popularity</b> with features in <a href="https://www.theguardian.com" target="_blank">The Guardian</a>, <a href="https://www.cnn.com" target="_blank">CNN</a> and <a href="https://www.lastampa.it" target="_blank">La Stampa</a>.</p>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-head"><span class="tile"><img src="img/projects/advocate.png" alt="Advocate Technologies"></span><h3>Advocate Technologies</h3></div>
-                    <p>Advocate is modernising insurance compliance, focusing on simplifying complex processes within the industry to help businesses navigate regulatory challenges effectively.</p>
-                    <p>As a Founding Engineer, <b>I design and develop the company's core DNA systems</b> tailored to client requirements in the <b>highly complex field of insurance</b>. I focus on creating modular, high-performance, and secure solutions that stay up-to-date with industry standards. Additionally, <b>I lead and manage the backend team</b> to ensure seamless execution and collaboration.</p>
+            <div class="label">// 01 — work</div>
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="card job">
+                    <div class="job-head">
+                        <div><h3>VODA.ai</h3><span class="job-role">Senior Backend Engineer</span><div class="certs"><span>ISO/IEC 27001:2022</span></div></div>
+                        <span class="dates">Sep 2026 – now · Remote</span>
+                    </div>
+                    <p>Event-driven backend for <b>AI decision-support software used by municipal water utilities</b>.</p>
+                    <ul>
+                        <li>Moved synchronous workloads to a <b>parallel, event-driven architecture</b> with AWS SQS, event source mappings and Lambda.</li>
+                        <li>Built high-throughput microservices on PostgreSQL and MongoDB in <b>Python, Go and TypeScript</b>.</li>
+                        <li>Added background workers, WebSockets and <b>end-to-end distributed tracing</b>.</li>
+                        <li>Built tooling that runs the <b>full cloud stack on localhost</b> (Docker, AWS, SQS, Lambda).</li>
+                    </ul>
+                    <div class="tags"><span>Python</span><span>Go</span><span>TypeScript</span><span>AWS Lambda</span><span>SQS</span><span>PostgreSQL</span><span>MongoDB</span></div>
                 </div>
+                <div class="card job">
+                    <div class="job-head">
+                        <div><h3>Advocate Technologies</h3><span class="job-role">Lead Backend Engineer · Founding Engineer</span><div class="certs"><span>ISO/IEC 27001:2022</span><span>SOC 2 Type II</span></div></div>
+                        <span class="dates">Sep 2020 – Jan 2024 · New York · Remote</span>
+                    </div>
+                    <p><b>First employee.</b> Designed the core platform for insurance compliance, a complex and regulated domain. The platform processed <b class="metric">$1.5T in loan value</b>.</p>
+                    <ul>
+                        <li>Designed and ran the <b>core AWS infrastructure</b>, with deployments on Docker and Kubernetes.</li>
+                        <li>Built the <b>core GraphQL API</b> (Node.js, Apollo Server, MongoDB) with ACLs and field-level permissions.</li>
+                        <li><b>Led and mentored a team of 3 engineers</b>, and interviewed and hired new engineers.</li>
+                        <li>Built a queue system (BullMQ, Redis), Redis caching, a rule-driven dynamic fields engine and Stripe payments.</li>
+                    </ul>
+                    <div class="tags"><span>Node.js</span><span>GraphQL</span><span>Apollo</span><span>MongoDB</span><span>Redis</span><span>AWS</span><span>Kubernetes</span></div>
+                </div>
+                <div class="card job">
+                    <div class="job-head">
+                        <div><h3>Primary Colors</h3><span class="job-role">Lead Backend Engineer</span></div>
+                        <span class="dates">Sep 2019 – Jun 2022 · New York · Remote</span>
+                    </div>
+                    <p>Led backend work for client platforms in retail, tailoring and travel.</p>
+                    <ul>
+                        <li><b>Hair Cuttery:</b> <b class="metric">−75% request time</b> by moving the legacy REST API to GraphQL. Joined many external APIs into one endpoint with Apollo Federation.</li>
+                        <li><b>Hemster:</b> built a <b>50+ model domain</b> (orders, invoicing, payments, alterations, shipping) and a dynamic pricing system. <b class="metric">−15% code complexity</b> with a reusable query filter.</li>
+                        <li><b>Dorsia</b> (AI travel platform): <b class="metric">−80% Google Maps API cost</b> through caching. Geospatial search with Elasticsearch, load balancing and auto scaling on AWS.</li>
+                    </ul>
+                    <div class="tags"><span>Ruby on Rails</span><span>GraphQL</span><span>PostgreSQL</span><span>Elasticsearch</span><span>Redis</span><span>AWS</span></div>
+                </div>
+            </div>
+            <h3 class="sub">Earlier</h3>
+            <div class="grid earlier">
                 <div class="card">
                     <div class="card-head"><span class="tile"><img src="img/projects/nimber.png" alt="Nimber"></span><h3>Nimber</h3></div>
-                    <p>Nimber is a community delivery service that matches people who need to send something with someone going that way, anyway.</p>
-                    <p><b>I lead the transition of core technology</b> from outsourced to in-house, <b>built and managed a backend team</b>, and maintain our key infrastructure. <b>I design and build the company's marketplace with Stripe API</b>, handling charges, refunds, and user verification, managed AWS infrastructure and security, automated deployment, and monitored systems.</p>
+                    <p>Moved core technology from outsourced to in-house, built the backend team, and built the Stripe marketplace (charges, refunds, user verification).</p>
                 </div>
                 <div class="card">
-                    <div class="card-head"><span class="tile"><img src="img/projects/bosch.png" alt="Bosch"></span><h3>Bosch</h3></div>
-                    <p>At Loud &amp; Clear, we developed an MVP for Bosch's Social Media Crisis Simulator.</p>
-                    <p>As the Lead Developer, I managed the project end-to-end, from gathering initial requirements to delivering the final production-ready solution. <b>This highly complex simulator</b> serves as an educational tool, acting as an emulator to train users in <b>handling social media crises</b> effectively.</p>
+                    <div class="card-head"><span class="tile"><img src="img/projects/bosch.png" alt="Bosch"></span><h3>Bosch · Loud &amp; Clear</h3></div>
+                    <p>Lead Developer, end to end, for the MVP of a social-media crisis simulator that trains teams to handle a crisis.</p>
                 </div>
                 <div class="card">
-                    <div class="card-head"><span class="tile"><img src="img/projects/sensis.png" alt="Sensis"></span><h3>Sensis</h3></div>
-                    <p>Sensis helps businesses with all their marketing needs including websites, local search in our digital and book directories, SEO, SEM.</p>
-                    <p>My role at Netfira was <b>eCommerce and Accounting integrations</b>. We built <b>Active Resource style Libraries (GEMs)</b> with Object–relational mapping (ORM) using Test-driven development (TDD).</p>
-                </div>
-                <div class="card">
-                    <div class="card-head"><span class="tile"><img src="img/projects/hemster.png" alt="Hemster"></span><h3>Hemster</h3></div>
-                    <p>Hemster is revolutionizing the art of tailoring through technology, creating a platform that enables size freedom.</p>
-                    <p>As a Backend Engineer, <b>I implemented the API</b> using Rails and GraphQL. The project had an <b>extremely strict deadline</b>, requiring seamless coordination across multiple departments to <b>deliver a highly complex system on time</b>.</p>
+                    <div class="card-head"><span class="tile"><img src="img/projects/sensis.png" alt="Sensis"></span><h3>Sensis · Netfira</h3></div>
+                    <p>eCommerce and accounting integrations. Built Active Resource style gems with ORM, using TDD.</p>
                 </div>
                 <div class="card">
                     <div class="card-head"><span class="tile"><img src="img/projects/symantec.png" alt="Symantec"></span><h3>Symantec</h3></div>
-                    <p>Symantec's marketing campaign for the Australasia and Pacific region.</p>
-                    <p>I created <b>web-based documents and microsites</b> that achieved <b>outstanding results</b> in open rates and conversions. <b>The success of these campaigns</b> set a benchmark, attracting attention from other Symantec regions as exemplary work.</p>
+                    <p>Built microsites for Symantec's Australasia &amp; Pacific marketing campaigns. They got strong open and conversion rates, and other Symantec regions used them as examples.</p>
                 </div>
             </div>
         </div>
@@ -353,21 +379,98 @@
 
     <section id="recommendations">
         <div class="wrap">
-            <div class="label">// 03 — signal</div>
+            <div class="label">// 02 — signal</div>
             <h2>Recommendations</h2>
-            <p class="lead">I'm honored to have worked with amazing teams and individuals who've shared their experiences about my skills and dedication.</p>
+            <p class="lead">What people I worked with say about my work.</p>
             <div class="quotes">
                 <div class="card">
                     <blockquote>Yannis is an enthusiastic, well-travelled developer, with good <strong>attention to detail</strong>, and a well-rounded coding style. In the months he worked on my team, I found him to be <strong>open and collaborative</strong>, and was impressed by his rigorous commenting, refactoring, and sense of how things 'should' be done. He was never too bogged down in functionality to remember <strong>the important, little things</strong>, which is refreshing in programmers of his calibre.</blockquote>
                     <div class="who"><a class="tile lg" href="https://www.atlassian.com" target="_blank" title="Atlassian"><img src="img/recommendations/atlassian.png" alt="Atlassian Logo"></a><div><h4>Neil Pearson</h4><span><a href="https://www.atlassian.com" target="_blank">Atlassian</a> Senior Software Engineer</span></div></div>
                 </div>
                 <div class="card">
-                    <blockquote>Yannis is one of the most talented software engineers I've ever worked with. His ability to <strong>tackle complex problems with simple, efficient solutions is unmatched.</strong> The quality of his code is always clean and a pleasure to read. His unique mix of <strong>technical leadership, business-oriented thinking, and experience</strong> makes him stand out.</blockquote>
-                    <div class="who"><a class="tile lg" href="https://zapier.com" target="_blank" title="Zapier"><img src="img/recommendations/zapier.png" alt="Zapier AI Logo"></a><div><h4>Andrew Kordampalos</h4><span><a href="https://zapier.com" target="_blank">Zapier</a> Senior Software Engineer</span></div></div>
+                    <blockquote>Yannis is one of the most talented software engineers I've ever worked with. His ability to <strong>tackle complex problems with simple, efficient solutions is unmatched.</strong> The quality of his code is always clean and a pleasure to read. His unique mix of <strong>technical leadership, business-oriented thinking, and experience</strong> makes him stand out. Beyond his technical expertise, Yannis is a thoughtful and collaborative teammate who <strong>elevates everyone around him</strong>. Any team would be fortunate to have him!</blockquote>
+                    <div class="who"><a class="tile lg" href="https://zapier.com" target="_blank" title="Zapier"><img src="img/recommendations/zapier.png" alt="Zapier AI Logo"></a><div><h4>Andrew Kordampalos</h4><span><a href="https://zapier.com" target="_blank">Zapier</a> AI Growth</span><span class="rel">Worked with Yannis on the same team</span></div></div>
                 </div>
                 <div class="card">
-                    <blockquote>Yannis is a true coding maestro, and I've learned an immense amount from his innovative approach to crafting generic code. What truly sets Yannis apart is his <strong>exceptional ability to foresee and address edge cases</strong>, making our company's API <strong>not only robust but bug-free</strong> — a rare feat in my professional experience. <strong>His dedication to the team</strong> and fellow developers is commendable.</blockquote>
-                    <div class="who"><a class="tile lg" href="https://www.ikea.com" target="_blank" title="IKEA"><img src="img/recommendations/ikea.png" alt="IKEA Logo"></a><div><h4>Ram Sankhavaram</h4><span><a href="https://www.ikea.com" target="_blank">IKEA</a> Software Engineer</span></div></div>
+                    <blockquote>Yannis is a true coding maestro, and I've learned an immense amount from his innovative approach to crafting generic code. What truly sets Yannis apart is his <strong>exceptional ability to foresee and address edge cases</strong>, making our company's API <strong>not only robust but bug-free</strong> — a rare feat in my professional experience. <strong>His dedication to the team</strong> and fellow developers is commendable. His exceptional skills, dedication, and <strong>inspiring leadership</strong> make him an asset to any team.</blockquote>
+                    <div class="who"><a class="tile lg" href="https://www.ikea.com" target="_blank" title="IKEA"><img src="img/recommendations/ikea.png" alt="IKEA Logo"></a><div><h4>Ram Sankhavaram</h4><span><a href="https://www.ikea.com" target="_blank">IKEA</a> Software Engineer</span><span class="rel">Reported to Yannis directly at Advocate</span></div></div>
+                </div>
+            </div>
+            <a class="btn ghost after-grid" href="https://www.linkedin.com/in/ioanniskolovos/details/recommendations/" target="_blank">→ Read all 7 recommendations on LinkedIn</a>
+        </div>
+    </section>
+
+    <section id="technologies">
+        <div class="wrap">
+            <div class="label">// 03 — stack</div>
+            <h2>Technologies</h2>
+            <p class="lead">The tools I use most, grouped by area. The list keeps changing with <b>each project's needs</b>.</p>
+            <div class="stack-group">
+                <h3>Languages</h3>
+                <div class="grid sm">
+                    <a href="https://www.typescriptlang.org/" target="_blank" class="chip"><span class="tile txt">TS</span>TypeScript</a>
+                    <a href="https://nodejs.org/" target="_blank" class="chip"><span class="tile"><img src="img/node-js.svg" alt=""></span>Node.js</a>
+                    <a href="https://www.python.org/" target="_blank" class="chip"><span class="tile txt">Py</span>Python</a>
+                    <a href="https://go.dev/" target="_blank" class="chip"><span class="tile txt">Go</span>Go</a>
+                    <a href="https://www.ruby-lang.org/" target="_blank" class="chip"><span class="tile"><img src="img/ruby.svg" alt=""></span>Ruby</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>APIs &amp; Frameworks</h3>
+                <div class="grid sm">
+                    <a href="https://graphql.org/" target="_blank" class="chip"><span class="tile"><img src="img/graphql.svg" alt=""></span>GraphQL</a>
+                    <a href="https://www.apollographql.com/" target="_blank" class="chip"><span class="tile"><img src="img/apollo.svg" alt=""></span>Apollo</a>
+                    <a href="https://expressjs.com/" target="_blank" class="chip"><span class="tile"><img src="img/express.svg" alt=""></span>Express</a>
+                    <a href="https://rubyonrails.org/" target="_blank" class="chip"><span class="tile"><img src="img/rails.svg" alt=""></span>Ruby on Rails</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>Data</h3>
+                <div class="grid sm">
+                    <a href="https://www.postgresql.org/" target="_blank" class="chip"><span class="tile"><img src="img/postgresql.svg" alt=""></span>PostgreSQL</a>
+                    <a href="https://www.mysql.com/" target="_blank" class="chip"><span class="tile txt">My</span>MySQL</a>
+                    <a href="https://www.mongodb.com/" target="_blank" class="chip"><span class="tile"><img src="img/mongodb.svg" alt=""></span>MongoDB</a>
+                    <a href="https://redis.io/" target="_blank" class="chip"><span class="tile"><img src="img/redis.svg" alt=""></span>Redis</a>
+                    <a href="https://www.elastic.co/" target="_blank" class="chip"><span class="tile"><img src="img/elasticsearch.svg" alt=""></span>ElasticSearch</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>Cloud &amp; Infrastructure</h3>
+                <div class="grid sm">
+                    <a href="https://aws.amazon.com/" target="_blank" class="chip"><span class="tile"><img src="img/aws.svg" alt=""></span>AWS</a>
+                    <a href="https://www.docker.com/" target="_blank" class="chip"><span class="tile"><img src="img/docker.svg" alt=""></span>Docker</a>
+                    <a href="https://kubernetes.io/" target="_blank" class="chip"><span class="tile"><img src="img/kubernetes.svg" alt=""></span>Kubernetes</a>
+                    <a href="https://www.serverless.com/" target="_blank" class="chip"><span class="tile"><img src="img/serverless.svg" alt=""></span>Serverless</a>
+                    <a href="https://www.terraform.io/" target="_blank" class="chip"><span class="tile txt">Tf</span>Terraform</a>
+                    <a href="https://kafka.apache.org/" target="_blank" class="chip"><span class="tile txt">Kf</span>Kafka</a>
+                    <a href="https://nginx.org/" target="_blank" class="chip"><span class="tile"><img src="img/nginx.svg" alt=""></span>Nginx</a>
+                    <a href="https://www.ansible.com/" target="_blank" class="chip"><span class="tile"><img src="img/ansible.svg" alt=""></span>Ansible</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>Observability</h3>
+                <div class="grid sm">
+                    <a href="https://grafana.com/" target="_blank" class="chip"><span class="tile"><img src="img/grafana.png" alt=""></span>Grafana</a>
+                    <a href="https://prometheus.io/" target="_blank" class="chip"><span class="tile txt">Pr</span>Prometheus</a>
+                    <a href="https://www.elastic.co/kibana/" target="_blank" class="chip"><span class="tile"><img src="img/kibana.svg" alt=""></span>Kibana</a>
+                    <a href="https://newrelic.com/" target="_blank" class="chip"><span class="tile txt">NR</span>New Relic</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>AI</h3>
+                <div class="grid sm">
+                    <a href="https://openai.com/" target="_blank" class="chip"><span class="tile txt">AI</span>OpenAI</a>
+                    <a href="https://neo4j.com/" target="_blank" class="chip"><span class="tile txt">N4</span>Neo4j</a>
+                    <a href="https://qdrant.tech/" target="_blank" class="chip"><span class="tile txt">Qd</span>Qdrant</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>Security &amp; Delivery</h3>
+                <div class="grid sm">
+                    <a href="https://auth0.com/" target="_blank" class="chip"><span class="tile"><img src="img/auth0.svg" alt=""></span>Auth0</a>
+                    <a href="https://jwt.io/" target="_blank" class="chip"><span class="tile"><img src="img/jwt.svg" alt=""></span>JWT</a>
+                    <a href="https://jestjs.io/" target="_blank" class="chip"><span class="tile"><img src="img/jest.svg" alt=""></span>Jest</a>
+                    <a href="https://circleci.com/" target="_blank" class="chip"><span class="tile"><img src="img/circleci.svg" alt=""></span>CircleCI</a>
                 </div>
             </div>
         </div>
