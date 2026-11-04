@@ -142,15 +142,14 @@
         }
         .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--bg); }
         .hero-text { flex: 1; min-width: 280px; }
-        .tag { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
         .hero h1 {
-            font-size: clamp(40px, 7vw, 64px); line-height: 1.05; margin: 12px 0 16px; letter-spacing: -0.02em;
+            font-size: clamp(40px, 7vw, 64px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em;
             background: linear-gradient(90deg, #0b1220, #0891b2 60%, #7c3aed);
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         .hero p { color: var(--muted); font-size: 18px; max-width: 640px; margin-bottom: 12px; }
-        .status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-        .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+        .hero .role { font-size: 22px; font-weight: 700; color: #475569; margin-bottom: 6px; }
+        .hero p.tagline { color: #9aa6b6; margin-bottom: 24px; }
         .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
         .btn {
             font-family: var(--mono); font-size: 14px; padding: 10px 20px; border-radius: 8px;
@@ -195,12 +194,14 @@
         .chip .tile { width: 28px; height: 28px; padding: 4px; border-radius: 6px; }
 
         .more { font-family: var(--mono); font-size: 13px; display: inline-block; margin-top: 16px; }
+        .after-grid { display: block; width: fit-content; margin: 24px 0 0 auto; }
 
         /* Quotes */
         .quotes { display: grid; gap: 16px; }
         blockquote { font-size: 17px; color: #334155; font-style: normal; }
         blockquote::before { content: "\201C"; font-family: var(--mono); color: var(--accent); font-size: 32px; line-height: 0; vertical-align: -12px; margin-right: 4px; }
         .who { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+        a.tile:hover { border-color: var(--accent); }
         .who h4 { font-size: 15px; }
         .who span { font-size: 13px; color: var(--muted); font-family: var(--mono); }
 
@@ -261,10 +262,9 @@
         <div class="wrap">
             <div class="avatar"><img src="img/me2.png" alt="Yannis Kolovos"></div>
             <div class="hero-text">
-                <div class="status">online · building</div>
-                <div class="tag">Lead Backend Engineer</div>
                 <h1>Yannis Kolovos</h1>
-                <p>Designing and building secure, scalable systems.</p>
+                <div class="role">Lead Backend Engineer</div>
+                <p class="tagline">Designing and building secure, scalable systems.</p>
                 <p>With 20 years of hands-on experience building complex systems from the ground up, I transform complex business requirements into high-performance, real-world applications.</p>
                 <p>As a strategic thinker and hacker at heart, I approach system design through the lens of the <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a> — <strong>simplicity, efficiency, and elegance.</strong></p>
                 <div class="cta">
@@ -306,6 +306,7 @@
                 <a href="https://nginx.org/" target="_blank" class="chip"><span class="tile"><img src="img/nginx.svg" alt=""></span>Nginx</a>
                 <a href="https://jestjs.io/" target="_blank" class="chip"><span class="tile"><img src="img/jest.svg" alt=""></span>Jest</a>
                 <a href="https://circleci.com/" target="_blank" class="chip"><span class="tile"><img src="img/circleci.svg" alt=""></span>CircleCI</a>
+                <a href="https://grafana.com/" target="_blank" class="chip"><span class="tile"><img src="img/grafana.png" alt=""></span>Grafana</a>
             </div>
         </div>
     </section>
@@ -357,16 +358,16 @@
             <p class="lead">I'm honored to have worked with amazing teams and individuals who've shared their experiences about my skills and dedication.</p>
             <div class="quotes">
                 <div class="card">
-                    <blockquote>Yannis is a true coding maestro, and I've learned an immense amount from his innovative approach to crafting generic code. What truly sets Yannis apart is his <strong>exceptional ability to foresee and address edge cases</strong>, making our company's API <strong>not only robust but bug-free</strong> — a rare feat in my professional experience. <strong>His dedication to the team</strong> and fellow developers is commendable.</blockquote>
-                    <div class="who"><span class="tile lg"><img src="img/recommendations/ikea.png" alt="IKEA Logo"></span><div><h4>Ram Sankhavaram</h4><span>Software Engineer</span></div></div>
-                </div>
-                <div class="card">
                     <blockquote>Yannis is an enthusiastic, well-travelled developer, with good <strong>attention to detail</strong>, and a well-rounded coding style. In the months he worked on my team, I found him to be <strong>open and collaborative</strong>, and was impressed by his rigorous commenting, refactoring, and sense of how things 'should' be done. He was never too bogged down in functionality to remember <strong>the important, little things</strong>, which is refreshing in programmers of his calibre.</blockquote>
-                    <div class="who"><span class="tile lg"><img src="img/recommendations/atlassian.png" alt="Atlassian Logo"></span><div><h4>Neil Pearson</h4><span>Senior Software Engineer</span></div></div>
+                    <div class="who"><a class="tile lg" href="https://www.atlassian.com" target="_blank" title="Atlassian"><img src="img/recommendations/atlassian.png" alt="Atlassian Logo"></a><div><h4>Neil Pearson</h4><span><a href="https://www.atlassian.com" target="_blank">Atlassian</a> Senior Software Engineer</span></div></div>
                 </div>
                 <div class="card">
                     <blockquote>Yannis is one of the most talented software engineers I've ever worked with. His ability to <strong>tackle complex problems with simple, efficient solutions is unmatched.</strong> The quality of his code is always clean and a pleasure to read. His unique mix of <strong>technical leadership, business-oriented thinking, and experience</strong> makes him stand out.</blockquote>
-                    <div class="who"><span class="tile lg"><img src="img/recommendations/zapier.png" alt="Zapier AI Logo"></span><div><h4>Andrew Kordampalos</h4><span>Senior Software Engineer</span></div></div>
+                    <div class="who"><a class="tile lg" href="https://zapier.com" target="_blank" title="Zapier"><img src="img/recommendations/zapier.png" alt="Zapier AI Logo"></a><div><h4>Andrew Kordampalos</h4><span><a href="https://zapier.com" target="_blank">Zapier</a> Senior Software Engineer</span></div></div>
+                </div>
+                <div class="card">
+                    <blockquote>Yannis is a true coding maestro, and I've learned an immense amount from his innovative approach to crafting generic code. What truly sets Yannis apart is his <strong>exceptional ability to foresee and address edge cases</strong>, making our company's API <strong>not only robust but bug-free</strong> — a rare feat in my professional experience. <strong>His dedication to the team</strong> and fellow developers is commendable.</blockquote>
+                    <div class="who"><a class="tile lg" href="https://www.ikea.com" target="_blank" title="IKEA"><img src="img/recommendations/ikea.png" alt="IKEA Logo"></a><div><h4>Ram Sankhavaram</h4><span><a href="https://www.ikea.com" target="_blank">IKEA</a> Software Engineer</span></div></div>
                 </div>
             </div>
         </div>
@@ -383,10 +384,6 @@
                     <p>A practical guide to implementing Retrieval-Augmented Generation with local LLMs and vector search.</p>
                 </div>
                 <div class="card">
-                    <h3><a href="https://devpost.com/software/kip-ai" target="_blank">Kip AI</a></h3>
-                    <p>Meet Kip — our little AI chat agent, that guides you on any site, highlighting everything without prior training. Made for the ElevenLabs x a16z Worldwide Hackathon using Google Gemini API and ElevenLabs voice API.</p>
-                </div>
-                <div class="card">
                     <h3><a href="https://yannis-kolovos.medium.com/how-to-solve-jsonlogic-graphql-unsupported-query-keys-using-lodash-fb9aa7365a51" target="_blank">JsonLogic + GraphQL Unsupported Query Keys</a></h3>
                     <p>A json-logic-js-graphql and Lodash to handle unsupported JSONLogic operators in GraphQL queries, providing flexibility and seamless integration for rule validation and data manipulation.</p>
                 </div>
@@ -394,11 +391,8 @@
                     <h3><a href="https://yannis-kolovos.medium.com/keep-your-codebase-clean-with-rails-api-and-graphql-connection-helpers-42ee479fd1f9" target="_blank">Keep your codebase clean with Rails API and GraphQL Connection Helpers</a></h3>
                     <p>Creating reusable helpers for GraphQL connections in a Rails API, covering ordering, filtering by datetime fields, search integration, and adding total counts to ensure a clean, scalable, and elegant codebase.</p>
                 </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/Poseidon" target="_blank">Poseidon MVC Framework</a></h3>
-                    <p>Poseidon is a Rack-based application designed to demonstrate the principles of building and designing a Rack application framework. It leverages middleware and follows an MVC pattern with Active Record integration. Created for educational purposes, Poseidon serves as a hands-on tool to explore the inner workings of modern web frameworks.</p>
-                </div>
             </div>
+            <a class="btn ghost after-grid" href="https://yannis-kolovos.medium.com" target="_blank">→ More articles on Medium</a>
         </div>
     </section>
 
@@ -423,37 +417,8 @@
                     <p>A library for interacting with the Stripe API in Ruby.</p>
                     <a class="more" href="https://github.com/stripe/stripe-ruby" target="_blank">→ view on github</a>
                 </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/Notify.js" target="_blank">notify.js</a></h3>
-                    <p>A simple notification library able to use callbacks.</p>
-                    <a class="more" href="https://github.com/msroot/Notify.js" target="_blank">→ view on github</a>
-                </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/run_later" target="_blank">run_later</a></h3>
-                    <p>RunLater is a Gem for running commands later.</p>
-                    <a class="more" href="https://github.com/msroot/run_later" target="_blank">→ view on github</a>
-                </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/reportly" target="_blank">reportly</a></h3>
-                    <p>Reports for Active Record results! No configurations needed.</p>
-                    <a class="more" href="https://github.com/msroot/reportly" target="_blank">→ view on github</a>
-                </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/roubini.rb" target="_blank">roubini.rb</a></h3>
-                    <p>(Experimental) Support for Ruby tokens to use Greek characters.</p>
-                    <a class="more" href="https://github.com/msroot/roubini.rb" target="_blank">→ view on github</a>
-                </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/json-logic-js-graphql" target="_blank">json-logic-js support</a></h3>
-                    <p>GraphQL query support for json-logic-js using Lodash methods.</p>
-                    <a class="more" href="https://github.com/msroot/json-logic-js-graphql" target="_blank">→ view on github</a>
-                </div>
-                <div class="card">
-                    <h3><a href="https://github.com/msroot/retrohue" target="_blank">retrohue</a></h3>
-                    <p>Control your Philips Hue with your computer's microphone and create schemes based on the music's melody.</p>
-                    <a class="more" href="https://github.com/msroot/retrohue" target="_blank">→ view on github</a>
-                </div>
             </div>
+            <a class="btn ghost after-grid" href="https://github.com/msroot" target="_blank">→ More projects on GitHub</a>
         </div>
     </section>
 
