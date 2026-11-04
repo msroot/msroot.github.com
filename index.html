@@ -117,9 +117,20 @@
         }
 
         #grid-pulses {
-            position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; opacity: 0.25;
+            position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none;
             mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.15) 100%);
         }
+
+        #star-tuner {
+            position: fixed; right: 16px; bottom: 16px; z-index: 50; width: 260px; display: grid; gap: 10px;
+            padding: 16px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line);
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12); font-family: var(--mono); font-size: 12px; color: var(--text);
+        }
+        #star-tuner label { display: grid; grid-template-columns: 1fr auto; gap: 4px; }
+        #star-tuner input { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); }
+        #star-tuner output { color: var(--accent); }
+        #star-tuner button { font: inherit; padding: 6px; border-radius: 8px; border: 1px solid var(--accent); background: var(--panel); color: var(--accent); cursor: pointer; }
+        #star-tuner code { font-size: 11px; color: var(--muted); }
 
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -728,9 +739,11 @@
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             var canvas = document.getElementById('grid-pulses');
             var ctx = canvas.getContext('2d');
-            var CELL = 48, MAX = 3;
+            var CELL = 48;
+            // Speed and gap vary ±30% / ±55% around these values; each point gets a size between dotMin and dotMax
+            var CFG = { opacity: 0.25, max: 3, speed: 140, gap: 1000, dotMin: 1.6, dotMax: 7.5 };
             var COLORS = ['8, 145, 178', '124, 58, 237', '14, 165, 233', '139, 92, 246'];
-            var stars = [], recent = [], running = false, last = 0, w = 0, h = 0;
+            var stars = [], recent = [], running = false, last = 0, w = 0, h = 0, timer = null;
 
             function rand(a, b) { return a + Math.random() * (b - a); }
             function randInt(a, b) { return Math.floor(rand(a, b + 1)); }
@@ -783,7 +796,7 @@
                 if (recent.length > 40) recent.splice(0, recent.length - 40);
                 return {
                     a: a, b: b, path: path, total: (path.length - 1) * CELL, dist: 0,
-                    speed: rand(120, 220), tail: rand(160, 320), width: rand(2, 3.2),
+                    pace: rand(0.7, 1.3), ua: Math.random(), ub: Math.random(), clock: 0, tail: rand(160, 320), width: rand(2, 3.2),
                     color: COLORS[randInt(0, COLORS.length - 1)], phase: 'appear', t: 0
                 };
             }
@@ -816,11 +829,26 @@
                 ctx.beginPath(); ctx.arc(p[0] + 0.5, p[1] + 0.5, r, 0, Math.PI * 2); ctx.fill();
             }
 
+            function sonar(p, color, alpha, r, clock) {
+                if (alpha <= 0) return;
+                ctx.shadowBlur = 0;
+                ctx.lineWidth = 1.2;
+                for (var k = 0; k < 2; k++) {
+                    var f = ((clock / 1.8) + k * 0.5) % 1;
+                    ctx.strokeStyle = 'rgba(' + color + ', ' + (0.55 * alpha * (1 - f)).toFixed(3) + ')';
+                    ctx.beginPath(); ctx.arc(p[0] + 0.5, p[1] + 0.5, r + f * (r * 3 + 16), 0, Math.PI * 2); ctx.stroke();
+                }
+            }
+
             function draw(s) {
                 var pointsAlpha = s.phase === 'appear' ? Math.min(1, s.t / 0.5) : s.phase === 'vanish' ? 1 - s.t / 0.7 : 1;
                 var arrived = Math.max(0, Math.min(1, (s.dist - s.total) / s.tail));
-                dot(s.a, s.color, pointsAlpha, 3);
-                dot(s.b, s.color, pointsAlpha, 3 + arrived * 2);
+                var span = Math.max(CFG.dotMax - CFG.dotMin, 0);
+                var ra = CFG.dotMin + s.ua * span, rb = CFG.dotMin + s.ub * span + arrived * 2;
+                sonar(s.a, s.color, pointsAlpha, ra, s.clock + s.ua);
+                sonar(s.b, s.color, pointsAlpha, rb, s.clock + s.ub);
+                dot(s.a, s.color, pointsAlpha, ra);
+                dot(s.b, s.color, pointsAlpha, rb);
 
                 var pts = s.phase === 'travel' ? tailPoints(s) : [];
                 if (pts.length > 1) {
@@ -852,10 +880,10 @@
             }
 
             function update(s, dt) {
-                s.t += dt;
+                s.t += dt; s.clock += dt;
                 if (s.phase === 'appear' && s.t >= 0.5) { s.phase = 'travel'; s.t = 0; }
                 else if (s.phase === 'travel') {
-                    s.dist += s.speed * dt;
+                    s.dist += CFG.speed * s.pace * dt;
                     // The tail drains into the end point before both points fade
                     if (s.dist >= s.total + s.tail) { s.phase = 'vanish'; s.t = 0; }
                 }
@@ -871,18 +899,62 @@
             }
 
             function spawn() {
-                if (!document.hidden && stars.length < MAX) {
+                if (!document.hidden && stars.length < CFG.max) {
                     var s = makeStar();
                     if (s) stars.push(s);
                     if (!running && stars.length) { running = true; last = performance.now(); requestAnimationFrame(frame); }
                 }
                 // Random gap, so the rhythm never settles into a pattern
-                setTimeout(spawn, rand(1200, 4200));
+                timer = setTimeout(spawn, rand(CFG.gap * 0.45, CFG.gap * 1.55));
             }
 
             resize();
             window.addEventListener('resize', resize);
-            setTimeout(spawn, rand(800, 2000));
+            canvas.style.opacity = CFG.opacity;
+            timer = setTimeout(spawn, rand(800, 2000));
+
+            // Test panel: open the page with ?tune to try other values
+            if (/[?&]tune\b/.test(location.search)) {
+                var panel = document.createElement('div');
+                panel.id = 'star-tuner';
+                panel.innerHTML =
+                    '<strong>Stars</strong>' +
+                    '<label>Opacity <output></output><input type="range" data-k="opacity" min="0.05" max="1" step="0.05"></label>' +
+                    '<label>Max stars <output></output><input type="range" data-k="max" min="1" max="10" step="1"></label>' +
+                    '<label>Speed px/s <output></output><input type="range" data-k="speed" min="40" max="600" step="10"></label>' +
+                    '<label>Gap ms <output></output><input type="range" data-k="gap" min="300" max="8000" step="100"></label>' +
+                    '<label>Dot size min <output></output><input type="range" data-k="dotMin" min="0.5" max="8" step="0.1"></label>' +
+                    '<label>Dot size max <output></output><input type="range" data-k="dotMax" min="0.5" max="12" step="0.1"></label>' +
+                    '<button type="button">Star now</button>' +
+                    '<code></code>';
+                document.body.appendChild(panel);
+                var code = panel.querySelector('code');
+                var show = function () {
+                    code.textContent = 'opacity ' + CFG.opacity + ' · max ' + CFG.max + ' · speed ' + CFG.speed + ' · gap ' + CFG.gap + ' · dots ' + CFG.dotMin + '–' + CFG.dotMax;
+                };
+                var starNow = function () {
+                    var s = makeStar();
+                    if (s) stars.push(s);
+                    if (!running) { running = true; last = performance.now(); requestAnimationFrame(frame); }
+                };
+                panel.querySelectorAll('input').forEach(function (input) {
+                    var k = input.dataset.k, out = input.previousElementSibling;
+                    input.value = CFG[k]; out.textContent = CFG[k];
+                    input.addEventListener('input', function () {
+                        CFG[k] = Number(input.value); out.textContent = input.value;
+                        if (k === 'opacity') canvas.style.opacity = CFG.opacity;
+                        if (k === 'max') {
+                            // Fewer: fade out the extra stars; more: start one right away
+                            stars.filter(function (s) { return s.phase !== 'vanish'; }).slice(CFG.max).forEach(function (s) { s.phase = 'vanish'; s.t = 0; });
+                            if (stars.length < CFG.max) starNow();
+                        }
+                        if (k === 'gap' || k === 'max') { clearTimeout(timer); timer = setTimeout(spawn, rand(CFG.gap * 0.45, CFG.gap * 1.55)); }
+                        show();
+                    });
+                });
+                panel.querySelector('button').addEventListener('click', starNow);
+                show();
+            }
         })();
     </script>
 </body>
