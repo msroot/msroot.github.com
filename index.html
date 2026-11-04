@@ -205,6 +205,7 @@
 
         .more { font-family: var(--mono); font-size: 13px; display: inline-block; margin-top: 16px; }
         .after-grid { display: block; width: fit-content; margin: 24px 0 0 auto; }
+        .btn.after-grid, .btn.after-grid:hover { background: var(--panel); }
 
         /* Experience */
         .timeline { display: grid; gap: 16px; }
@@ -234,7 +235,6 @@
         a.tile:hover { border-color: var(--accent); }
         .who h4 { font-size: 15px; }
         .who span { font-size: 13px; color: var(--muted); font-family: var(--mono); }
-        .who .rel { display: block; font-size: 12px; margin-top: 2px; }
 
         /* Lists */
         .list { list-style: none; display: grid; gap: 10px; }
@@ -261,7 +261,6 @@
         .socials { margin-top: 32px; font-family: var(--mono); font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; }
 
         footer { border-top: 1px solid var(--line); padding: 32px 0; text-align: center; font-family: var(--mono); font-size: 13px; color: var(--muted); }
-        footer p + p { margin-top: 8px; }
 
         @media (max-width: 640px) {
             nav ul { display: none; }
@@ -302,13 +301,8 @@
                     <span><b>AITD Excellence Award 2017</b> · Best Use of Technology for Learning</span>
                     <span>Projects featured in <b>The Guardian · CNN · La Stampa</b></span>
                 </div>
-                <p>With 20 years of hands-on experience building complex systems from the ground up, I transform complex business requirements into high-performance, real-world applications.</p>
+                <p>With 20+ years of hands-on experience building complex systems from the ground up, I transform complex business requirements into high-performance, real-world applications.</p>
                 <p>As a strategic thinker and hacker at heart, I approach system design through the lens of the <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a> — <strong>simplicity, efficiency, and elegance.</strong></p>
-                <div class="cta">
-                    <a class="btn" href="mailto:yannis.kolovos+website@gmail.com">Get in Touch →</a>
-                    <a class="btn ghost" href="https://github.com/msroot" target="_blank">GitHub</a>
-                    <a class="btn ghost" href="https://www.linkedin.com/in/ioanniskolovos" target="_blank">LinkedIn</a>
-                </div>
             </div>
         </div>
     </header>
@@ -389,16 +383,16 @@
             <p class="lead">What people I worked with say about my work.</p>
             <div class="quotes">
                 <div class="card">
-                    <blockquote>Yannis is an enthusiastic, well-travelled developer, with good <strong>attention to detail</strong>, and a well-rounded coding style. In the months he worked on my team, I found him to be <strong>open and collaborative</strong>, and was impressed by his rigorous commenting, refactoring, and sense of how things 'should' be done. He was never too bogged down in functionality to remember <strong>the important, little things</strong>, which is refreshing in programmers of his calibre.</blockquote>
-                    <div class="who"><a class="tile lg" href="https://www.atlassian.com" target="_blank" title="Atlassian"><img src="img/recommendations/atlassian.png" alt="Atlassian Logo"></a><div><h4>Neil Pearson</h4><span><a href="https://www.atlassian.com" target="_blank">Atlassian</a> Senior Software Engineer</span></div></div>
-                </div>
-                <div class="card">
                     <blockquote>Yannis is one of the most talented software engineers I've ever worked with. His ability to <strong>tackle complex problems with simple, efficient solutions is unmatched.</strong> The quality of his code is always clean and a pleasure to read. His unique mix of <strong>technical leadership, business-oriented thinking, and experience</strong> makes him stand out. Beyond his technical expertise, Yannis is a thoughtful and collaborative teammate who <strong>elevates everyone around him</strong>. Any team would be fortunate to have him!</blockquote>
-                    <div class="who"><a class="tile lg" href="https://zapier.com" target="_blank" title="Zapier"><img src="img/recommendations/zapier.png" alt="Zapier AI Logo"></a><div><h4>Andrew Kordampalos</h4><span><a href="https://zapier.com" target="_blank">Zapier</a> AI Growth</span><span class="rel">Worked with Yannis on the same team</span></div></div>
+                    <div class="who"><a class="tile lg" href="https://zapier.com" target="_blank" title="Zapier"><img src="img/recommendations/zapier.png" alt="Zapier AI Logo"></a><div><h4>Andrew Kordampalos</h4><span><a href="https://zapier.com" target="_blank">Zapier</a> AI Growth</span></div></div>
                 </div>
                 <div class="card">
                     <blockquote>Yannis is a true coding maestro, and I've learned an immense amount from his innovative approach to crafting generic code. What truly sets Yannis apart is his <strong>exceptional ability to foresee and address edge cases</strong>, making our company's API <strong>not only robust but bug-free</strong> — a rare feat in my professional experience. <strong>His dedication to the team</strong> and fellow developers is commendable. His exceptional skills, dedication, and <strong>inspiring leadership</strong> make him an asset to any team.</blockquote>
-                    <div class="who"><a class="tile lg" href="https://www.ikea.com" target="_blank" title="IKEA"><img src="img/recommendations/ikea.png" alt="IKEA Logo"></a><div><h4>Ram Sankhavaram</h4><span><a href="https://www.ikea.com" target="_blank">IKEA</a> Software Engineer</span><span class="rel">Reported to Yannis directly at Advocate</span></div></div>
+                    <div class="who"><a class="tile lg" href="https://www.ikea.com" target="_blank" title="IKEA"><img src="img/recommendations/ikea.png" alt="IKEA Logo"></a><div><h4>Ram Sankhavaram</h4><span><a href="https://www.ikea.com" target="_blank">IKEA</a> Software Engineer</span></div></div>
+                </div>
+                <div class="card">
+                    <blockquote>Yannis is an enthusiastic, well-travelled developer, with good <strong>attention to detail</strong>, and a well-rounded coding style. In the months he worked on my team, I found him to be <strong>open and collaborative</strong>, and was impressed by his rigorous commenting, refactoring, and sense of how things 'should' be done. He was never too bogged down in functionality to remember <strong>the important, little things</strong>, which is refreshing in programmers of his calibre.</blockquote>
+                    <div class="who"><a class="tile lg" href="https://www.atlassian.com" target="_blank" title="Atlassian"><img src="img/recommendations/atlassian.png" alt="Atlassian Logo"></a><div><h4>Neil Pearson</h4><span><a href="https://www.atlassian.com" target="_blank">Atlassian</a> Senior Software Engineer</span></div></div>
                 </div>
             </div>
             <a class="btn ghost after-grid" href="https://www.linkedin.com/in/ioanniskolovos/details/recommendations/" target="_blank">→ Read all 7 recommendations on LinkedIn</a>
@@ -413,87 +407,137 @@
             <div class="stack-group">
                 <h3>Languages</h3>
                 <div class="grid sm">
-                    <a href="https://www.typescriptlang.org/" target="_blank" class="chip"><span class="tile txt">TS</span>TypeScript</a>
-                    <a href="https://nodejs.org/" target="_blank" class="chip"><span class="tile"><img src="img/node-js.svg" alt=""></span>Node.js</a>
-                    <a href="https://www.python.org/" target="_blank" class="chip"><span class="tile txt">Py</span>Python</a>
-                    <a href="https://go.dev/" target="_blank" class="chip"><span class="tile txt">Go</span>Go</a>
+                    <a href="https://www.typescriptlang.org/" target="_blank" class="chip"><span class="tile"><img src="img/typescript.svg" alt=""></span>TypeScript</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="chip"><span class="tile"><img src="img/javascript.svg" alt=""></span>JavaScript</a>
+                    <a href="https://nodejs.org/" target="_blank" class="chip"><span class="tile"><img src="img/nodedotjs.svg" alt=""></span>Node.js</a>
+                    <a href="https://www.python.org/" target="_blank" class="chip"><span class="tile"><img src="img/python.svg" alt=""></span>Python</a>
+                    <a href="https://go.dev/" target="_blank" class="chip"><span class="tile"><img src="img/go.svg" alt=""></span>Go</a>
                     <a href="https://www.ruby-lang.org/" target="_blank" class="chip"><span class="tile"><img src="img/ruby.svg" alt=""></span>Ruby</a>
+                    <a href="https://www.gnu.org/software/bash/" target="_blank" class="chip"><span class="tile"><img src="img/gnubash.svg" alt=""></span>Bash</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>Architecture</h3>
+                <div class="grid sm">
+                    <a href="https://microservices.io/" target="_blank" class="chip"><span class="tile txt">MS</span>Microservices</a>
+                    <a href="https://en.wikipedia.org/wiki/Event-driven_architecture" target="_blank" class="chip"><span class="tile txt">ED</span>Event-driven</a>
+                    <a href="https://en.wikipedia.org/wiki/Domain-driven_design" target="_blank" class="chip"><span class="tile txt">DDD</span>Domain-Driven Design</a>
+                    <a href="https://en.wikipedia.org/wiki/High_availability" target="_blank" class="chip"><span class="tile txt">HA</span>High Availability</a>
+                    <a href="https://en.wikipedia.org/wiki/Load_balancing_(computing)" target="_blank" class="chip"><span class="tile txt">LB</span>Load Balancing</a>
+                    <a href="https://en.wikipedia.org/wiki/Autoscaling" target="_blank" class="chip"><span class="tile txt">AS</span>Auto Scaling</a>
+                    <a href="https://martinfowler.com/bliki/CircuitBreaker.html" target="_blank" class="chip"><span class="tile txt">CB</span>Circuit Breakers</a>
+                    <a href="https://en.wikipedia.org/wiki/Rate_limiting" target="_blank" class="chip"><span class="tile txt">RL</span>Rate Limiting</a>
+                    <a href="https://en.wikipedia.org/wiki/Cache_(computing)" target="_blank" class="chip"><span class="tile txt">Ca</span>Caching Strategies</a>
+                    <a href="https://en.wikipedia.org/wiki/API#Design" target="_blank" class="chip"><span class="tile txt">AD</span>API Design</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>APIs &amp; Integrations</h3>
                 <div class="grid sm">
                     <a href="https://graphql.org/" target="_blank" class="chip"><span class="tile"><img src="img/graphql.svg" alt=""></span>GraphQL</a>
-                    <a href="https://www.apollographql.com/" target="_blank" class="chip"><span class="tile"><img src="img/apollo.svg" alt=""></span>Apollo</a>
+                    <a href="https://www.apollographql.com/" target="_blank" class="chip"><span class="tile"><img src="img/apollographql.svg" alt=""></span>Apollo</a>
+                    <a href="https://en.wikipedia.org/wiki/REST" target="_blank" class="chip"><span class="tile txt">API</span>REST</a>
+                    <a href="https://grpc.io/" target="_blank" class="chip"><span class="tile txt">gR</span>gRPC</a>
                     <a href="https://expressjs.com/" target="_blank" class="chip"><span class="tile"><img src="img/express.svg" alt=""></span>Express</a>
-                    <a href="https://rubyonrails.org/" target="_blank" class="chip"><span class="tile"><img src="img/rails.svg" alt=""></span>Ruby on Rails</a>
-                    <a href="https://stripe.com/" target="_blank" class="chip"><span class="tile txt">S</span>Stripe</a>
+                    <a href="https://nestjs.com/" target="_blank" class="chip"><span class="tile"><img src="img/nestjs.svg" alt=""></span>NestJS</a>
+                    <a href="https://rubyonrails.org/" target="_blank" class="chip"><span class="tile"><img src="img/rubyonrails.svg" alt=""></span>Ruby on Rails</a>
+                    <a href="https://stripe.com/" target="_blank" class="chip"><span class="tile"><img src="img/stripe.svg" alt=""></span>Stripe</a>
+                    <a href="https://developers.google.com/maps" target="_blank" class="chip"><span class="tile"><img src="img/googlemaps.svg" alt=""></span>Google Maps API</a>
+                    <a href="https://www.arcgis.com/" target="_blank" class="chip"><span class="tile"><img src="img/arcgis.svg" alt=""></span>ArcGIS</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>Data</h3>
                 <div class="grid sm">
                     <a href="https://www.postgresql.org/" target="_blank" class="chip"><span class="tile"><img src="img/postgresql.svg" alt=""></span>PostgreSQL</a>
-                    <a href="https://www.mysql.com/" target="_blank" class="chip"><span class="tile txt">My</span>MySQL</a>
+                    <a href="https://www.mysql.com/" target="_blank" class="chip"><span class="tile"><img src="img/mysql.svg" alt=""></span>MySQL</a>
                     <a href="https://www.mongodb.com/" target="_blank" class="chip"><span class="tile"><img src="img/mongodb.svg" alt=""></span>MongoDB</a>
                     <a href="https://redis.io/" target="_blank" class="chip"><span class="tile"><img src="img/redis.svg" alt=""></span>Redis</a>
+                    <a href="https://memcached.org/" target="_blank" class="chip"><span class="tile txt">Mc</span>Memcached</a>
                     <a href="https://www.elastic.co/" target="_blank" class="chip"><span class="tile"><img src="img/elasticsearch.svg" alt=""></span>ElasticSearch</a>
+                    <a href="https://www.influxdata.com/" target="_blank" class="chip"><span class="tile"><img src="img/influxdb.svg" alt=""></span>InfluxDB</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>AWS</h3>
+                <div class="grid sm">
+                    <a href="https://aws.amazon.com/" target="_blank" class="chip"><span class="tile"><img src="img/amazonwebservices.svg" alt=""></span>AWS</a>
+                    <a href="https://aws.amazon.com/lambda/" target="_blank" class="chip"><span class="tile"><img src="img/awslambda.svg" alt=""></span>AWS Lambda</a>
+                    <a href="https://aws.amazon.com/ec2/" target="_blank" class="chip"><span class="tile"><img src="img/amazonec2.svg" alt=""></span>Amazon EC2</a>
+                    <a href="https://aws.amazon.com/s3/" target="_blank" class="chip"><span class="tile"><img src="img/amazons3.svg" alt=""></span>Amazon S3</a>
+                    <a href="https://aws.amazon.com/rds/" target="_blank" class="chip"><span class="tile"><img src="img/amazonrds.svg" alt=""></span>Amazon RDS</a>
+                    <a href="https://aws.amazon.com/vpc/" target="_blank" class="chip"><span class="tile txt">VPC</span>Amazon VPC</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>Cloud &amp; Infrastructure</h3>
                 <div class="grid sm">
-                    <a href="https://aws.amazon.com/" target="_blank" class="chip"><span class="tile"><img src="img/aws.svg" alt=""></span>AWS</a>
-                    <a href="https://aws.amazon.com/lambda/" target="_blank" class="chip"><span class="tile txt">λ</span>AWS Lambda</a>
                     <a href="https://www.docker.com/" target="_blank" class="chip"><span class="tile"><img src="img/docker.svg" alt=""></span>Docker</a>
                     <a href="https://kubernetes.io/" target="_blank" class="chip"><span class="tile"><img src="img/kubernetes.svg" alt=""></span>Kubernetes</a>
                     <a href="https://www.serverless.com/" target="_blank" class="chip"><span class="tile"><img src="img/serverless.svg" alt=""></span>Serverless</a>
-                    <a href="https://www.terraform.io/" target="_blank" class="chip"><span class="tile txt">Tf</span>Terraform</a>
                     <a href="https://nginx.org/" target="_blank" class="chip"><span class="tile"><img src="img/nginx.svg" alt=""></span>Nginx</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>Queues &amp; Messaging</h3>
                 <div class="grid sm">
-                    <a href="https://kafka.apache.org/" target="_blank" class="chip"><span class="tile txt">Kf</span>Kafka</a>
-                    <a href="https://aws.amazon.com/sqs/" target="_blank" class="chip"><span class="tile txt">SQS</span>AWS SQS</a>
+                    <a href="https://kafka.apache.org/" target="_blank" class="chip"><span class="tile"><img src="img/apachekafka.svg" alt=""></span>Kafka</a>
+                    <a href="https://www.rabbitmq.com/" target="_blank" class="chip"><span class="tile"><img src="img/rabbitmq.svg" alt=""></span>RabbitMQ</a>
+                    <a href="https://aws.amazon.com/sqs/" target="_blank" class="chip"><span class="tile"><img src="img/amazonsqs.svg" alt=""></span>AWS SQS</a>
+                    <a href="https://aws.amazon.com/amazon-mq/" target="_blank" class="chip"><span class="tile txt">MQ</span>Amazon MQ</a>
                     <a href="https://bullmq.io/" target="_blank" class="chip"><span class="tile txt">Bq</span>BullMQ</a>
-                    <a href="https://sidekiq.org/" target="_blank" class="chip"><span class="tile txt">Sq</span>Sidekiq</a>
+                    <a href="https://sidekiq.org/" target="_blank" class="chip"><span class="tile"><img src="img/sidekiq.svg" alt=""></span>Sidekiq</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>Observability</h3>
                 <div class="grid sm">
-                    <a href="https://grafana.com/" target="_blank" class="chip"><span class="tile"><img src="img/grafana.png" alt=""></span>Grafana</a>
-                    <a href="https://prometheus.io/" target="_blank" class="chip"><span class="tile txt">Pr</span>Prometheus</a>
+                    <a href="https://opentelemetry.io/" target="_blank" class="chip"><span class="tile"><img src="img/opentelemetry.svg" alt=""></span>OpenTelemetry</a>
+                    <a href="https://sentry.io/" target="_blank" class="chip"><span class="tile"><img src="img/sentry.svg" alt=""></span>Sentry</a>
+                    <a href="https://grafana.com/" target="_blank" class="chip"><span class="tile"><img src="img/grafana.svg" alt=""></span>Grafana</a>
+                    <a href="https://prometheus.io/" target="_blank" class="chip"><span class="tile"><img src="img/prometheus.svg" alt=""></span>Prometheus</a>
                     <a href="https://www.elastic.co/kibana/" target="_blank" class="chip"><span class="tile"><img src="img/kibana.svg" alt=""></span>Kibana</a>
-                    <a href="https://newrelic.com/" target="_blank" class="chip"><span class="tile txt">NR</span>New Relic</a>
-                    <a href="https://aws.amazon.com/cloudwatch/" target="_blank" class="chip"><span class="tile txt">CW</span>CloudWatch</a>
+                    <a href="https://newrelic.com/" target="_blank" class="chip"><span class="tile"><img src="img/newrelic.svg" alt=""></span>New Relic</a>
+                    <a href="https://aws.amazon.com/cloudwatch/" target="_blank" class="chip"><span class="tile"><img src="img/amazoncloudwatch.svg" alt=""></span>CloudWatch</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>AI</h3>
                 <div class="grid sm">
-                    <a href="https://openai.com/" target="_blank" class="chip"><span class="tile txt">AI</span>OpenAI</a>
-                    <a href="https://neo4j.com/" target="_blank" class="chip"><span class="tile txt">N4</span>Neo4j</a>
+                    <a href="https://openai.com/" target="_blank" class="chip"><span class="tile"><img src="img/openai.svg" alt=""></span>OpenAI</a>
+                    <a href="https://neo4j.com/" target="_blank" class="chip"><span class="tile"><img src="img/neo4j.svg" alt=""></span>Neo4j</a>
                     <a href="https://qdrant.tech/" target="_blank" class="chip"><span class="tile txt">Qd</span>Qdrant</a>
-                    <a href="https://ai.google.dev/" target="_blank" class="chip"><span class="tile txt">Gm</span>Gemini API</a>
+                    <a href="https://ollama.com/" target="_blank" class="chip"><span class="tile"><img src="img/ollama.svg" alt=""></span>Ollama</a>
+                    <a href="https://ai.google.dev/" target="_blank" class="chip"><span class="tile"><img src="img/googlegemini.svg" alt=""></span>Gemini API</a>
+                    <a href="https://elevenlabs.io/" target="_blank" class="chip"><span class="tile"><img src="img/elevenlabs.svg" alt=""></span>ElevenLabs</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>Security</h3>
                 <div class="grid sm">
                     <a href="https://auth0.com/" target="_blank" class="chip"><span class="tile"><img src="img/auth0.svg" alt=""></span>Auth0</a>
-                    <a href="https://jwt.io/" target="_blank" class="chip"><span class="tile"><img src="img/jwt.svg" alt=""></span>JWT</a>
+                    <a href="https://jwt.io/" target="_blank" class="chip"><span class="tile"><img src="img/jsonwebtokens.svg" alt=""></span>JWT</a>
                     <a href="https://oauth.net/2/" target="_blank" class="chip"><span class="tile txt">OA</span>OAuth</a>
+                    <a href="https://en.wikipedia.org/wiki/Role-based_access_control" target="_blank" class="chip"><span class="tile txt">RB</span>RBAC</a>
+                    <a href="https://en.wikipedia.org/wiki/Access-control_list" target="_blank" class="chip"><span class="tile txt">AC</span>ACL</a>
                 </div>
             </div>
             <div class="stack-group">
-                <h3>Delivery</h3>
+                <h3>Testing</h3>
                 <div class="grid sm">
-                    <a href="https://github.com/features/actions" target="_blank" class="chip"><span class="tile txt">GA</span>GitHub Actions</a>
                     <a href="https://jestjs.io/" target="_blank" class="chip"><span class="tile"><img src="img/jest.svg" alt=""></span>Jest</a>
+                    <a href="https://rspec.info/" target="_blank" class="chip"><span class="tile txt">RS</span>RSpec</a>
+                    <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" class="chip"><span class="tile txt">TDD</span>TDD</a>
+                    <a href="https://en.wikipedia.org/wiki/Integration_testing" target="_blank" class="chip"><span class="tile txt">E2E</span>Integration &amp; E2E</a>
+                    <a href="https://en.wikipedia.org/wiki/Benchmark_(computing)" target="_blank" class="chip"><span class="tile txt">Bm</span>Benchmarking</a>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h3>CI/CD &amp; IaC</h3>
+                <div class="grid sm">
+                    <a href="https://github.com/features/actions" target="_blank" class="chip"><span class="tile"><img src="img/githubactions.svg" alt=""></span>GitHub Actions</a>
                     <a href="https://circleci.com/" target="_blank" class="chip"><span class="tile"><img src="img/circleci.svg" alt=""></span>CircleCI</a>
+                    <a href="https://www.terraform.io/" target="_blank" class="chip"><span class="tile"><img src="img/terraform.svg" alt=""></span>Terraform</a>
                     <a href="https://www.ansible.com/" target="_blank" class="chip"><span class="tile"><img src="img/ansible.svg" alt=""></span>Ansible</a>
                 </div>
             </div>
@@ -504,7 +548,7 @@
         <div class="wrap">
             <div class="label">// 04 — writing</div>
             <h2>Articles</h2>
-            <p class="lead">Here are some of the articles I've written or contributed to, covering topics from software engineering.</p>
+            <p class="lead">Articles I've written on backend engineering, GraphQL and AI.</p>
             <div class="grid">
                 <div class="card">
                     <h3><a href="https://yannis-kolovos.medium.com/building-a-pdf-chat-system-with-rag-a-step-by-step-implementation-guide-f2221f3c9881" target="_blank">Building a PDF Chat System with RAG: A Step-by-Step Implementation Guide</a></h3>
@@ -618,8 +662,14 @@
         <div class="wrap">
             <div class="label">// 10 — offline</div>
             <h2>Beyond the Code</h2>
-            <p class="lead">In my free time, I'm often exploring mountain trails, discovering hidden natural landscapes, or cultivating my two gardens. I have a passion for cooking and researching quality ingredients, also experimenting with fermentation and other techniques.</p>
-            <p class="lead">As a fan of <a href="https://en.wikipedia.org/wiki/Epicurus" target="_blank">Epicurus</a>, I enjoy researching healthy food and habits, embracing a balanced and mindful lifestyle. I also enjoy practicing yoga, mixing music, and diving into a good book whenever I can, driven by a love for <b>continuous learning and self-improvement</b>.</p>
+            <div class="proof">
+                <span>🌍 Explorer</span>
+                <span>🥘 Gastronome</span>
+                <span>🪘 Music Lover</span>
+                <span>🏛 Philomath</span>
+                <span>🏡 Dad</span>
+            </div>
+            <p class="lead">Outside work, I explore mountain trails, tend my two gardens, and cook with quality ingredients, often experimenting with fermentation. As a fan of <a href="https://en.wikipedia.org/wiki/Epicurus" target="_blank">Epicurus</a>, I keep a balanced, mindful life with yoga, mixing music and a good book, driven by a love for <b>continuous learning</b>.</p>
             <div class="gallery">
                 <img src="img/m1.png" alt="Wengen a Swiss Alpine village" loading="lazy">
                 <img src="img/m2.png" alt="Fresh ingredients and Mediterranean cuisine" loading="lazy">
@@ -635,7 +685,7 @@
         <div class="wrap">
             <div class="label">// 11 — handshake</div>
             <h2>Let's Connect</h2>
-            <p class="lead">I'd love to collaborate on impactful projects or discuss innovative solutions. Feel free to connect with me on social media or drop me a message.</p>
+            <p class="lead">Thanks for stopping by! Whether it's about systems, food or music, I'm always happy to chat. Connect with me on social media or drop me a message.</p>
             <div class="cta">
                 <a class="btn" href="mailto:yannis.kolovos+website@gmail.com">Get in Touch →</a>
             </div>
@@ -657,8 +707,7 @@
 
     <footer>
         <div class="wrap">
-            <p>"There is nothing permanent except change." – Heraclitus</p>
-            <p>Hosted at <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Validated with <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fmsroot.me%2F" target="_blank" rel="noopener noreferrer">w3</a></p>
+            <p>Hosted at <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
         </div>
     </footer>
 </body>
