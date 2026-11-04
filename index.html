@@ -77,6 +77,9 @@
         gtag('config', 'G-QDCD0ZXEN7');
     </script>
 
+    <script>
+        try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+    </script>
     <style>
         :root {
             --bg: #f7f9fc;
@@ -150,6 +153,27 @@
         nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
         .logo { font-family: var(--mono); font-weight: 600; color: var(--text); }
         .logo span { color: var(--accent); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .theme-toggle {
+            width: 34px; height: 30px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel);
+            color: var(--text); font-size: 14px; line-height: 1; cursor: pointer; transition: border-color 0.2s;
+        }
+        .theme-toggle:hover { border-color: var(--accent); }
+
+        /* Dark theme */
+        :root[data-theme="dark"] {
+            --bg: #05070d; --panel: rgba(255, 255, 255, 0.03); --line: rgba(255, 255, 255, 0.08);
+            --text: #e6edf6; --muted: #8b97a8; --accent: #00e5ff; --accent-2: #8b5cf6;
+        }
+        :root[data-theme="dark"] nav { background: rgba(5, 7, 13, 0.7); }
+        :root[data-theme="dark"] .hero h1 { background-image: linear-gradient(90deg, #fff, #9fefff 60%, #c4b5fd); }
+        :root[data-theme="dark"] .hero .role, :root[data-theme="dark"] .job-role { color: #c3cddb; }
+        :root[data-theme="dark"] .hero p.tagline { color: #6b7789; }
+        :root[data-theme="dark"] blockquote { color: #c9d3e0; }
+        :root[data-theme="dark"] .certs span { color: #4ade80; }
+        :root[data-theme="dark"] .btn:hover { color: var(--bg); }
+        :root[data-theme="dark"] .tile.txt { color: #0891b2; }
+
         nav ul { list-style: none; display: flex; gap: 20px; font-family: var(--mono); font-size: 13px; overflow-x: auto; }
         nav ul a { color: var(--muted); white-space: nowrap; }
         nav ul a:hover { color: var(--accent); text-decoration: none; }
@@ -300,13 +324,16 @@
     <nav>
         <div class="wrap">
             <a href="#about" class="logo">msroot<span>.me</span></a>
-            <ul>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#technologies">stack</a></li>
-                <li><a href="#articles">articles</a></li>
-                <li><a href="#open-source">oss</a></li>
-                <li><a href="#connect">contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#experience">experience</a></li>
+                    <li><a href="#technologies">stack</a></li>
+                    <li><a href="#articles">articles</a></li>
+                    <li><a href="#open-source">oss</a></li>
+                    <li><a href="#connect">contact</a></li>
+                </ul>
+                <button type="button" class="theme-toggle" aria-label="Switch to dark theme">☾</button>
+            </div>
         </div>
     </nav>
 
@@ -685,13 +712,14 @@
             <div class="label">// 10 — offline</div>
             <h2>Beyond the Code</h2>
             <div class="proof">
-                <span>Explorer</span>
-                <span>Gastronome</span>
-                <span>Music Lover</span>
-                <span>Philomath</span>
-                <span>Dad</span>
+                <span>🌍 Explorer</span>
+                <span>🥘 Gastronome</span>
+                <span>🌿 Gardener</span>
+                <span>🪘 Music Lover</span>
+                <span>🏛 Philomath</span>
+                <span>👸 Dad</span>
             </div>
-            <p class="lead">Outside work, I explore mountain trails, tend my two gardens, and cook with quality ingredients, often experimenting with fermentation. As a fan of <a href="https://en.wikipedia.org/wiki/Epicurus" target="_blank">Epicurus</a>, I keep a balanced, mindful life with yoga, mixing music and a good book, driven by a love for <b>continuous learning</b>.</p>
+            <p class="lead">Outside work, I explore mountain trails, tend my two gardens, cook with quality ingredients, and bake sourdough bread and croissants, often experimenting with fermentation. As a fan of <a href="https://en.wikipedia.org/wiki/Epicurus" target="_blank">Epicurus</a>, I keep a balanced, mindful life with yoga, mixing music and a good book, driven by a love for <b>continuous learning</b>.</p>
             <div class="gallery">
                 <img src="img/m1.png" alt="Wengen a Swiss Alpine village" loading="lazy">
                 <img src="img/m2.png" alt="Fresh ingredients and Mediterranean cuisine" loading="lazy">
@@ -699,6 +727,9 @@
                 <img src="img/m4.png" alt="Life is combination of magic and pasta" loading="lazy">
                 <img src="img/m5.png" alt="Another experiment. Exploring the unique flavors" loading="lazy">
                 <img src="img/m6.png" alt="Me in the mountains again" loading="lazy">
+                <img src="img/m7.jpg" alt="Fresh green figs" loading="lazy">
+                <img src="img/m8.jpg" alt="Homemade croissants with flaky layers" loading="lazy">
+                <img src="img/m9.jpg" alt="Lauterbrunnen valley seen from Wengen" loading="lazy">
             </div>
         </div>
     </section>
@@ -957,6 +988,25 @@
                 panel.querySelector('button').addEventListener('click', starNow);
                 show();
             }
+        })();
+    </script>
+    <script>
+        // Light / dark toggle, remembered for the next visit
+        (function () {
+            var root = document.documentElement, btn = document.querySelector('.theme-toggle');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            function apply(dark) {
+                if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
+                btn.textContent = dark ? '☀' : '☾';
+                btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+                meta.setAttribute('content', dark ? '#05070d' : '#f7f9fc');
+            }
+            apply(root.dataset.theme === 'dark');
+            btn.addEventListener('click', function () {
+                var dark = root.dataset.theme !== 'dark';
+                apply(dark);
+                try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            });
         })();
     </script>
 </body>
