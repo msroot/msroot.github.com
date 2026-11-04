@@ -1,0 +1,20 @@
+# Yannis Kolovos
+
+> Senior Backend Engineer at VODA.ai with 20+ years of experience designing and building secure, scalable backend systems: event-driven architecture, GraphQL APIs, AWS, and AI/RAG tooling. Remote from Greece, working with USA and EMEA teams.
+
+The full site content is available as plain Markdown, written for AI agents and text readers.
+
+## Profile
+
+- [Full profile (Markdown)](https://msroot.me/index.md): experience, recommendations, technologies, articles, open source, education and contact
+- [Website](https://msroot.me): the same content as a web page
+
+## Elsewhere
+
+- [GitHub](https://github.com/msroot): open-source projects, including docuGraphRAG.js and docuRAG.js
+- [LinkedIn](https://www.linkedin.com/in/ioanniskolovos): work history and recommendations
+- [Medium](https://yannis-kolovos.medium.com): articles on backend engineering, GraphQL and AI
+
+## Contact
+
+- [Email](mailto:yannis.kolovos+website@gmail.com)
