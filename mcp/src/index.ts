@@ -141,6 +141,28 @@ async function answer(msg: any) {
   }
 }
 
+// Shown when a person opens the server URL in a browser
+const HELP_PAGE = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>msroot.me MCP server</title>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 16px; color: #0b1220; background: #f7f9fc; }
+  code { font-family: ui-monospace, monospace; background: #fff; border: 1px solid #e2e8f0; padding: 2px 6px; border-radius: 6px; }
+  a { color: #0891b2; }
+  @media (prefers-color-scheme: dark) { body { color: #e6edf6; background: #05070d; } code { background: #0b1220; border-color: #1e293b; } a { color: #00e5ff; } }
+</style></head><body>
+<h1>msroot.me MCP server</h1>
+<p>An <a href="https://modelcontextprotocol.io">MCP</a> server that lets AI assistants answer questions about <a href="https://msroot.me">Yannis Kolovos</a>, Senior Backend Engineer.</p>
+<h2>Connect</h2>
+<p>Add this URL to your MCP client as a remote (Streamable HTTP) server:</p>
+<p><code>https://msroot-mcp.msroot.workers.dev/mcp</code></p>
+<p><b>Claude:</b> Settings → Connectors → Add custom connector, then paste the URL.</p>
+<h2>Tools</h2>
+<p><code>get_profile</code> <code>list_sections</code> <code>get_section</code> <code>search_profile</code> <code>contact</code></p>
+<p>Then ask, for example: “What has Yannis built with GraphQL?”</p>
+<p><a href="https://github.com/msroot/msroot.github.com/tree/master/mcp">Source code</a></p>
+</body></html>`;
+
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", ...CORS } });
 
@@ -148,9 +170,11 @@ export default {
   async fetch(request: Request): Promise<Response> {
     const { pathname } = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
-    if (pathname !== "/mcp") {
-      return new Response("msroot.me MCP server. Connect your MCP client to /mcp.\n", { headers: CORS });
+    const wantsStream = (request.headers.get("Accept") ?? "").includes("text/event-stream");
+    if (request.method === "GET" && !wantsStream) {
+      return new Response(HELP_PAGE, { headers: { "Content-Type": "text/html; charset=utf-8", ...CORS } });
     }
+    if (pathname !== "/mcp") return new Response("Not Found", { status: 404, headers: CORS });
     // Stateless server: no server-to-client stream
     if (request.method !== "POST") return new Response("Method Not Allowed", { status: 405, headers: CORS });
 
