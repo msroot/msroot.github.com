@@ -91,10 +91,10 @@ All 7 recommendations: [LinkedIn](https://www.linkedin.com/in/ioanniskolovos/det
 - **APIs & Integrations:** GraphQL, Apollo, REST, gRPC, Express, NestJS, Ruby on Rails, Stripe, Google Maps API, ArcGIS
 - **Data:** PostgreSQL, MySQL, MongoDB, Redis, Memcached, Elasticsearch, InfluxDB
 - **AWS:** AWS, AWS Lambda, Amazon EC2, Amazon S3, Amazon RDS, Amazon VPC
-- **Cloud & Infrastructure:** Docker, Kubernetes, Serverless, Nginx
+- **Cloud & Infrastructure:** Docker, Kubernetes, Serverless, Nginx, Cloudflare Workers
 - **Queues & Messaging:** Kafka, RabbitMQ, AWS SQS, Amazon MQ, BullMQ, Sidekiq
 - **Observability:** OpenTelemetry, Sentry, Grafana, Prometheus, Kibana, New Relic, CloudWatch
-- **AI:** OpenAI, Neo4j, Qdrant, Ollama, Gemini API, ElevenLabs
+- **AI:** OpenAI, Neo4j, Qdrant, Ollama, Gemini API, ElevenLabs, MCP (Model Context Protocol)
 - **Security:** Auth0, JWT, OAuth, RBAC, ACL
 - **Testing:** Jest, RSpec, TDD, Integration & E2E, Benchmarking
 - **CI/CD & IaC:** GitHub Actions, CircleCI, Terraform, Ansible
