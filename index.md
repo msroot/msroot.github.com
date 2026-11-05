@@ -43,12 +43,12 @@ Sep 2020 – Jan 2024 · New York · Remote · ISO/IEC 27001:2022 · SOC 2 Type 
 
 First employee. Designed the core platform for insurance compliance, a complex and regulated domain. The platform processed $1.5T in loan value.
 
-- Designed and ran the core AWS infrastructure, with deployments on Docker and Kubernetes.
+- Designed and ran the core AWS infrastructure, with deployments on Docker.
 - Built the core GraphQL API (Node.js, Apollo Server, MongoDB) with ACLs and field-level permissions.
 - Led and mentored a team of 3 engineers, and interviewed and hired new engineers.
 - Built a queue system (BullMQ, Redis), Redis caching, a rule-driven dynamic fields engine and Stripe payments.
 
-Stack: Node.js, GraphQL, Apollo, MongoDB, Redis, AWS, Kubernetes
+Stack: Node.js, GraphQL, Apollo, MongoDB, Redis, AWS, Docker
 
 ### Primary Colors — Lead Backend Engineer
 Sep 2019 – Jun 2022 · New York · Remote
@@ -89,15 +89,15 @@ All 7 recommendations: [LinkedIn](https://www.linkedin.com/in/ioanniskolovos/det
 - **Languages:** TypeScript, JavaScript, Node.js, Ruby, Bash
 - **Architecture:** Microservices, Event-driven, Domain-Driven Design, High Availability, Load Balancing, Auto Scaling, Circuit Breakers, Rate Limiting, Caching Strategies, API Design
 - **APIs & Integrations:** GraphQL, Apollo, REST, gRPC, Express, NestJS, Ruby on Rails, Stripe, Google Maps API, ArcGIS
-- **Data:** PostgreSQL, MySQL, MongoDB, Redis, Memcached, Elasticsearch, InfluxDB
-- **AWS:** AWS, AWS Lambda, Amazon EC2, Amazon S3, Amazon RDS, Amazon VPC
-- **Cloud & Infrastructure:** Docker, Kubernetes, Serverless, Nginx, Cloudflare Workers
+- **Data:** PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch
+- **AWS:** AWS, AWS Lambda, Amazon EC2, Amazon S3, Amazon RDS
+- **Cloud & Infrastructure:** Docker, Serverless, Nginx, Cloudflare Workers, Heroku
 - **Queues & Messaging:** RabbitMQ, AWS SQS, Amazon MQ, BullMQ, Sidekiq
 - **Observability:** OpenTelemetry, Sentry, Grafana, Prometheus, CloudWatch
 - **AI:** Neo4j, Qdrant, Ollama, ElevenLabs, MCP (Model Context Protocol)
 - **Security:** Auth0, JWT, OAuth, RBAC, ACL
 - **Testing:** Jest, RSpec, TDD, Integration & E2E, Benchmarking
-- **CI/CD & IaC:** GitHub Actions, CircleCI, Terraform, Ansible
+- **CI/CD & IaC:** Git, GitHub Actions, CircleCI, Terraform, Ansible
 
 ## Articles
 
