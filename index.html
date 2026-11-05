@@ -217,6 +217,7 @@
         }
         .hero p { color: var(--muted); font-size: 18px; max-width: 640px; margin-bottom: 12px; }
         .hero .role { font-size: 22px; font-weight: 700; color: #475569; margin-bottom: 6px; }
+        .hero p.agents { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
         .hero p.tagline { color: #9aa6b6; margin-bottom: 24px; }
         .where { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 12px; }
         .proof { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
@@ -383,6 +384,7 @@
                 </div>
                 <p>With 20+ years of hands-on experience building complex systems from the ground up, I transform complex business requirements into high-performance, real-world applications.</p>
                 <p>As a strategic thinker and hacker at heart, I approach system design through the lens of the <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a> — <strong>simplicity, efficiency, and elegance.</strong></p>
+                <p class="agents">For AI agents: <a href="/index.md" type="text/markdown">Markdown version</a> · <a href="https://msroot-mcp.msroot.workers.dev/mcp" target="_blank" rel="noopener noreferrer">MCP server</a></p>
             </div>
         </div>
     </header>
@@ -400,7 +402,7 @@
                     <p>Event-driven backend for <b>AI decision-support software used by municipal water utilities</b>.</p>
                     <ul>
                         <li>Moved synchronous workloads to a <b>parallel, event-driven architecture</b> with AWS SQS, event source mappings and Lambda.</li>
-                        <li>Built high-throughput microservices on PostgreSQL and MongoDB in <b>Python, Go and TypeScript</b>.</li>
+                        <li>Built high-throughput microservices on PostgreSQL and MongoDB in TypeScript, working across a <b>polyglot codebase with Python and Go</b>, using AI-assisted development.</li>
                         <li>Added background workers, WebSockets and <b>end-to-end distributed tracing</b>.</li>
                         <li>Built tooling that runs the <b>full cloud stack on localhost</b> (Docker, AWS, SQS, Lambda).</li>
                     </ul>
@@ -490,8 +492,6 @@
                     <a href="https://www.typescriptlang.org/" target="_blank" class="chip"><span class="tile"><img src="img/typescript.svg" alt=""></span>TypeScript</a>
                     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="chip"><span class="tile"><img src="img/javascript.svg" alt=""></span>JavaScript</a>
                     <a href="https://nodejs.org/" target="_blank" class="chip"><span class="tile"><img src="img/nodedotjs.svg" alt=""></span>Node.js</a>
-                    <a href="https://www.python.org/" target="_blank" class="chip"><span class="tile"><img src="img/python.svg" alt=""></span>Python</a>
-                    <a href="https://go.dev/" target="_blank" class="chip"><span class="tile"><img src="img/go.svg" alt=""></span>Go</a>
                     <a href="https://www.ruby-lang.org/" target="_blank" class="chip"><span class="tile"><img src="img/ruby.svg" alt=""></span>Ruby</a>
                     <a href="https://www.gnu.org/software/bash/" target="_blank" class="chip"><span class="tile"><img src="img/gnubash.svg" alt=""></span>Bash</a>
                 </div>
@@ -562,7 +562,6 @@
             <div class="stack-group">
                 <h3>Queues &amp; Messaging</h3>
                 <div class="grid sm">
-                    <a href="https://kafka.apache.org/" target="_blank" class="chip"><span class="tile"><img src="img/apachekafka.svg" alt=""></span>Kafka</a>
                     <a href="https://www.rabbitmq.com/" target="_blank" class="chip"><span class="tile"><img src="img/rabbitmq.svg" alt=""></span>RabbitMQ</a>
                     <a href="https://aws.amazon.com/sqs/" target="_blank" class="chip"><span class="tile"><img src="img/amazonsqs.svg" alt=""></span>AWS SQS</a>
                     <a href="https://aws.amazon.com/amazon-mq/" target="_blank" class="chip"><span class="tile txt">MQ</span>Amazon MQ</a>
@@ -577,19 +576,15 @@
                     <a href="https://sentry.io/" target="_blank" class="chip"><span class="tile"><img src="img/sentry.svg" alt=""></span>Sentry</a>
                     <a href="https://grafana.com/" target="_blank" class="chip"><span class="tile"><img src="img/grafana.svg" alt=""></span>Grafana</a>
                     <a href="https://prometheus.io/" target="_blank" class="chip"><span class="tile"><img src="img/prometheus.svg" alt=""></span>Prometheus</a>
-                    <a href="https://www.elastic.co/kibana/" target="_blank" class="chip"><span class="tile"><img src="img/kibana.svg" alt=""></span>Kibana</a>
-                    <a href="https://newrelic.com/" target="_blank" class="chip"><span class="tile"><img src="img/newrelic.svg" alt=""></span>New Relic</a>
                     <a href="https://aws.amazon.com/cloudwatch/" target="_blank" class="chip"><span class="tile"><img src="img/amazoncloudwatch.svg" alt=""></span>CloudWatch</a>
                 </div>
             </div>
             <div class="stack-group">
                 <h3>AI</h3>
                 <div class="grid sm">
-                    <a href="https://openai.com/" target="_blank" class="chip"><span class="tile"><img src="img/openai.svg" alt=""></span>OpenAI</a>
                     <a href="https://neo4j.com/" target="_blank" class="chip"><span class="tile"><img src="img/neo4j.svg" alt=""></span>Neo4j</a>
                     <a href="https://qdrant.tech/" target="_blank" class="chip"><span class="tile txt">Qd</span>Qdrant</a>
                     <a href="https://ollama.com/" target="_blank" class="chip"><span class="tile"><img src="img/ollama.svg" alt=""></span>Ollama</a>
-                    <a href="https://ai.google.dev/" target="_blank" class="chip"><span class="tile"><img src="img/googlegemini.svg" alt=""></span>Gemini API</a>
                     <a href="https://elevenlabs.io/" target="_blank" class="chip"><span class="tile"><img src="img/elevenlabs.svg" alt=""></span>ElevenLabs</a>
                     <a href="https://modelcontextprotocol.io/" target="_blank" class="chip"><span class="tile txt">MCP</span>MCP Servers</a>
                 </div>

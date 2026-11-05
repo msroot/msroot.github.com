@@ -32,7 +32,7 @@ Sep 2026 – now · Remote · ISO/IEC 27001:2022
 Event-driven backend for AI decision-support software used by municipal water utilities.
 
 - Moved synchronous workloads to a parallel, event-driven architecture with AWS SQS, event source mappings and Lambda.
-- Built high-throughput microservices on PostgreSQL and MongoDB in Python, Go and TypeScript.
+- Built high-throughput microservices on PostgreSQL and MongoDB in TypeScript, working across a polyglot codebase with Python and Go, using AI-assisted development.
 - Added background workers, WebSockets and end-to-end distributed tracing.
 - Built tooling that runs the full cloud stack on localhost (Docker, AWS, SQS, Lambda).
 
@@ -86,15 +86,15 @@ All 7 recommendations: [LinkedIn](https://www.linkedin.com/in/ioanniskolovos/det
 
 ## Technologies
 
-- **Languages:** TypeScript, JavaScript, Node.js, Python, Go, Ruby, Bash
+- **Languages:** TypeScript, JavaScript, Node.js, Ruby, Bash
 - **Architecture:** Microservices, Event-driven, Domain-Driven Design, High Availability, Load Balancing, Auto Scaling, Circuit Breakers, Rate Limiting, Caching Strategies, API Design
 - **APIs & Integrations:** GraphQL, Apollo, REST, gRPC, Express, NestJS, Ruby on Rails, Stripe, Google Maps API, ArcGIS
 - **Data:** PostgreSQL, MySQL, MongoDB, Redis, Memcached, Elasticsearch, InfluxDB
 - **AWS:** AWS, AWS Lambda, Amazon EC2, Amazon S3, Amazon RDS, Amazon VPC
 - **Cloud & Infrastructure:** Docker, Kubernetes, Serverless, Nginx, Cloudflare Workers
-- **Queues & Messaging:** Kafka, RabbitMQ, AWS SQS, Amazon MQ, BullMQ, Sidekiq
-- **Observability:** OpenTelemetry, Sentry, Grafana, Prometheus, Kibana, New Relic, CloudWatch
-- **AI:** OpenAI, Neo4j, Qdrant, Ollama, Gemini API, ElevenLabs, MCP (Model Context Protocol)
+- **Queues & Messaging:** RabbitMQ, AWS SQS, Amazon MQ, BullMQ, Sidekiq
+- **Observability:** OpenTelemetry, Sentry, Grafana, Prometheus, CloudWatch
+- **AI:** Neo4j, Qdrant, Ollama, ElevenLabs, MCP (Model Context Protocol)
 - **Security:** Auth0, JWT, OAuth, RBAC, ACL
 - **Testing:** Jest, RSpec, TDD, Integration & E2E, Benchmarking
 - **CI/CD & IaC:** GitHub Actions, CircleCI, Terraform, Ansible
