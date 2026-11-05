@@ -154,6 +154,7 @@ Outside work, I explore mountain trails, tend my two gardens, cook with quality 
 
 ## Contact
 
+- MCP server: [https://msroot-mcp.msroot.workers.dev/mcp](https://msroot-mcp.msroot.workers.dev/mcp) (connect it in Claude or any MCP client)
 - Email: [yannis.kolovos+website@gmail.com](mailto:yannis.kolovos+website@gmail.com)
 - GitHub: [github.com/msroot](https://github.com/msroot)
 - LinkedIn: [linkedin.com/in/ioanniskolovos](https://www.linkedin.com/in/ioanniskolovos)

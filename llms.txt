@@ -9,6 +9,10 @@ The full site content is available as plain Markdown, written for AI agents and 
 - [Full profile (Markdown)](https://msroot.me/index.md): experience, recommendations, technologies, articles, open source, education and contact
 - [Website](https://msroot.me): the same content as a web page
 
+## MCP
+
+- [MCP server](https://msroot-mcp.msroot.workers.dev/mcp): remote MCP server (Streamable HTTP) with tools to read and search this profile: get_profile, list_sections, get_section, search_profile, contact
+
 ## Elsewhere
 
 - [GitHub](https://github.com/msroot): open-source projects, including docuGraphRAG.js and docuRAG.js
