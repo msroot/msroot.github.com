@@ -111,7 +111,7 @@ More: [yannis-kolovos.medium.com](https://yannis-kolovos.medium.com)
 
 - [docuGraphRAG.js](https://github.com/msroot/docuGraphRAG.js): document processing and RAG library that turns text into knowledge graphs, with user-driven entity extraction, Neo4j and OpenAI.
 - [docuRAG.js](https://github.com/msroot/docuRAG.js): JavaScript library for RAG-powered document question answering with Qdrant and local LLMs.
-- [stripe-ruby](https://github.com/stripe/stripe-ruby): contributor to the Ruby library for the Stripe API.
+- [stripe-ruby](https://github.com/stripe/stripe-ruby): Stripe's official Ruby library. Helped with Stripe Connect by adding `Stripe::CountrySpec` support, which tells platforms what each country requires for connected accounts ([commit](https://github.com/stripe/stripe-ruby/commit/f8532d225e20cb6ded2bd9a672a6d8a0479b80ba)).
 
 More: [github.com/msroot](https://github.com/msroot)
 

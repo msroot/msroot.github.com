@@ -265,6 +265,13 @@
         .chip:hover { border-color: var(--accent); text-decoration: none; color: var(--accent); }
         .chip .tile { width: 28px; height: 28px; padding: 4px; border-radius: 6px; }
 
+        /* Project screenshot at the top of an open source card */
+        .shot { display: block; height: 170px; margin: -8px -8px 16px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: #f1f5f9; }
+        .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.3s; }
+        .shot:hover img { transform: scale(1.03); }
+        .shot-logo { display: grid; place-items: center; }
+        .shot-logo img { width: 72px; height: 72px; object-fit: contain; }
+
         .more { font-family: var(--mono); font-size: 13px; display: inline-block; margin-top: 16px; }
         .after-grid { display: block; width: fit-content; margin: 24px 0 0 auto; }
         .btn.after-grid, .btn.after-grid:hover { background: var(--panel); }
@@ -647,18 +654,21 @@
             <p class="lead">In my free time, I strive to create and contribute to open-source projects. Here are some of the projects I've worked on:</p>
             <div class="grid">
                 <div class="card">
+                    <a class="shot" href="https://github.com/msroot/docuGraphRAG.js" target="_blank"><img src="img/oss/docugraphrag.jpg" alt="docuGraphRAG.js knowledge graph of entities extracted from a CV" loading="lazy"></a>
                     <h3><a href="https://github.com/msroot/docuGraphRAG.js" target="_blank">docuGraphRAG.js</a></h3>
                     <p>A document processing and RAG library transforming text into knowledge graphs with user-driven entity extraction for natural document conversation using Neo4j graph database and OpenAI.</p>
                     <a class="more" href="https://github.com/msroot/docuGraphRAG.js" target="_blank">→ view on github</a>
                 </div>
                 <div class="card">
+                    <a class="shot" href="https://github.com/msroot/docuRAG.js" target="_blank"><img src="img/oss/docurag.jpg" alt="docuRAG.js chat interface answering questions about a PDF" loading="lazy"></a>
                     <h3><a href="https://github.com/msroot/docuRAG.js" target="_blank">docuRAG.js</a></h3>
                     <p>A JavaScript library for building RAG-powered document question-answering systems. docuRAG.js provides a streamlined solution for implementing Retrieval-Augmented Generation using Qdrant vector database and local LLM integration.</p>
                     <a class="more" href="https://github.com/msroot/docuRAG.js" target="_blank">→ view on github</a>
                 </div>
                 <div class="card">
+                    <a class="shot shot-logo" href="https://github.com/stripe/stripe-ruby" target="_blank"><img src="img/stripe.svg" alt="Stripe logo"></a>
                     <h3><a href="https://github.com/stripe/stripe-ruby" target="_blank">stripe-ruby</a></h3>
-                    <p>A library for interacting with the Stripe API in Ruby.</p>
+                    <p>Stripe's official Ruby library. I helped with <b>Stripe Connect</b> by adding <b>Stripe::CountrySpec</b> support, which tells platforms what each country requires for connected accounts.</p>
                     <a class="more" href="https://github.com/stripe/stripe-ruby" target="_blank">→ view on github</a>
                 </div>
             </div>
