@@ -79,7 +79,11 @@
     </script>
 
     <script>
-        try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            if (saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.dataset.theme = 'dark';
+        })();
     </script>
     <style>
         :root {
@@ -155,11 +159,23 @@
         .logo { font-family: var(--mono); font-weight: 600; color: var(--text); }
         .logo span { color: var(--accent); }
         .nav-right { display: flex; align-items: center; gap: 20px; }
-        .theme-toggle {
-            width: 34px; height: 30px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel);
-            color: var(--text); font-size: 14px; line-height: 1; cursor: pointer; transition: border-color 0.2s;
+        .theme-menu { position: relative; }
+        .theme-current {
+            width: 28px; height: 26px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel);
+            color: var(--text); font-size: 13px; line-height: 1; cursor: pointer; transition: border-color 0.2s;
         }
-        .theme-toggle:hover { border-color: var(--accent); }
+        .theme-current:hover, .theme-current[aria-expanded="true"] { border-color: var(--accent); }
+        .theme-options {
+            position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; display: grid; min-width: 120px; padding: 4px;
+            border-radius: 10px; border: 1px solid var(--line); background: var(--bg); box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+        }
+        .theme-options[hidden] { display: none; }
+        .theme-options button {
+            display: flex; align-items: center; gap: 8px; padding: 6px 10px; border: 0; border-radius: 6px; background: transparent;
+            font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: left; cursor: pointer;
+        }
+        .theme-options button:hover { background: var(--line); color: var(--text); }
+        .theme-options button[aria-pressed="true"] { color: var(--accent); }
 
         /* Dark theme */
         :root[data-theme="dark"] {
@@ -333,7 +349,14 @@
                     <li><a href="#open-source">oss</a></li>
                     <li><a href="#connect">contact</a></li>
                 </ul>
-                <button type="button" class="theme-toggle" aria-label="Switch to dark theme">☾</button>
+                <div class="theme-menu">
+                    <button type="button" class="theme-current" aria-haspopup="true" aria-expanded="false" aria-label="Theme" title="Theme">◐</button>
+                    <div class="theme-options" hidden>
+                        <button type="button" data-mode="system"><span>◐</span>System</button>
+                        <button type="button" data-mode="light"><span>☀</span>Light</button>
+                        <button type="button" data-mode="dark"><span>☾</span>Dark</button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -761,7 +784,7 @@
 
     <footer>
         <div class="wrap">
-            <p>Hosted at <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
+            <p>Hosted at <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · <a href="/index.md" type="text/markdown">Markdown version for AI agents</a></p>
         </div>
     </footer>
     <script>
@@ -1001,22 +1024,45 @@
         );
     </script>
     <script>
-        // Light / dark toggle, remembered for the next visit
+        // Theme menu: System (default), Light or Dark; the choice is remembered
         (function () {
-            var root = document.documentElement, btn = document.querySelector('.theme-toggle');
+            var root = document.documentElement;
+            var current = document.querySelector('.theme-current');
+            var menu = document.querySelector('.theme-options');
+            var buttons = menu.querySelectorAll('button');
+            var ICONS = { system: '◐', light: '☀', dark: '☾' };
             var meta = document.querySelector('meta[name="theme-color"]');
-            function apply(dark) {
+            var system = window.matchMedia('(prefers-color-scheme: dark)');
+            var mode = 'system';
+            try { mode = localStorage.getItem('theme') || 'system'; } catch (e) {}
+
+            function apply() {
+                var dark = mode === 'dark' || (mode === 'system' && system.matches);
                 if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
-                btn.textContent = dark ? '☀' : '☾';
-                btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
                 meta.setAttribute('content', dark ? '#05070d' : '#f7f9fc');
+                buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
+                current.textContent = ICONS[mode] || ICONS.system;
             }
-            apply(root.dataset.theme === 'dark');
-            btn.addEventListener('click', function () {
-                var dark = root.dataset.theme !== 'dark';
-                apply(dark);
-                try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+
+            function open(show) {
+                menu.hidden = !show;
+                current.setAttribute('aria-expanded', show ? 'true' : 'false');
+            }
+
+            current.addEventListener('click', function (e) { e.stopPropagation(); open(menu.hidden); });
+            document.addEventListener('click', function (e) { if (!menu.hidden && !menu.contains(e.target)) open(false); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { open(false); current.focus(); } });
+
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    mode = b.dataset.mode;
+                    try { if (mode === 'system') localStorage.removeItem('theme'); else localStorage.setItem('theme', mode); } catch (e) {}
+                    apply();
+                    open(false);
+                });
             });
+            system.addEventListener('change', function () { if (mode === 'system') apply(); });
+            apply();
         })();
     </script>
 </body>
